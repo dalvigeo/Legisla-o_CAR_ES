@@ -1,10 +1,10 @@
 # Legislação CAR/ES
 
-Catálogo web de normas aplicadas ao Cadastro Ambiental Rural no Espírito Santo, organizado no contexto do projeto **DescompliCAR**.
+Base web de normas aplicadas ao Cadastro Ambiental Rural no Espírito Santo, organizada no contexto do projeto **DescompliCAR**.
 
 ## Objetivo
 
-Disponibilizar uma fonte de consulta simples para localizar normas federais e estaduais relacionadas a:
+Disponibilizar uma fonte de consulta simples para localizar e ler normas federais e estaduais relacionadas a:
 
 - Cadastro Ambiental Rural (CAR)
 - Área de Preservação Permanente (APP)
@@ -16,67 +16,72 @@ Disponibilizar uma fonte de consulta simples para localizar normas federais e es
 - Georreferenciamento e registro de imóveis
 - Fiscalização ambiental
 
-O projeto é **um catálogo**, não uma publicação oficial nem uma consolidação normativa substitutiva das fontes governamentais.
+Cada norma possui uma página de leitura com **texto transcrito e formatado**, identificação da fonte utilizada e link clicável para o documento ou página de origem. O projeto não substitui a publicação oficial.
 
 ## Estrutura
 
-- `index.html` — página inicial com o catálogo organizado por esfera.
-- `busca.html` — página exclusiva de pesquisa por termo, esfera, situação e tema.
-- `norma.html` — ficha individual de cada norma, acessada por identificador na URL.
-- `data.js` — base estruturada das normas cadastradas.
-- `app.js` — renderização do catálogo inicial.
-- `busca.js` — pesquisa e filtragem.
-- `norma.js` — renderização das fichas e relações temáticas.
-- `styles.css` — identidade visual e layout responsivo.
+- `index.html` — página inicial organizada por esfera.
+- `busca.html` — pesquisa por termo, esfera, situação e tema, incluindo o conteúdo das normas.
+- `norma.html` — página individual de leitura da norma.
+- `data.js` — catálogo e metadados das normas.
+- `textos/` — textos formatados gerados para cada norma.
+- `generated-index.js` — índice textual utilizado pela busca.
+- `generated-sources.js` — fontes efetivamente usadas na transcrição e fontes oficiais.
+- `generated-report.json` — relatório da última coleta automática.
+- `source_overrides.json` — exceções de fonte e regras de consolidação editorial.
+- `scripts/build_legislation.py` — coletor, extrator e formatador dos textos.
+- `.github/workflows/atualizar-textos.yml` — atualização automática pelo GitHub Actions.
+- `app.js`, `busca.js`, `norma.js` — interface do catálogo, pesquisa e leitura.
+- `styles.css` — identidade visual e formatação jurídica.
 
 ## Critério de fontes
 
 São priorizadas fontes oficiais, especialmente:
 
 - Presidência da República / Planalto para legislação federal;
-- CONAMA/MMA/ICMBio para atos próprios, quando disponível;
+- CONAMA/MMA/ICMBio para atos próprios;
 - Governo do Estado do Espírito Santo e Assembleia Legislativa;
 - Instituto de Defesa Agropecuária e Florestal do Espírito Santo (Idaf) para normas, instruções e procedimentos de sua competência.
 
-Quando o órgão disponibiliza texto compilado ou consolidado, ele deve ser preferido. Quando a página oficial mantém norma-base e atos alteradores separados, o catálogo indica a necessidade de conferência conjunta.
-
-**Conferência inicial do catálogo: 11/08/2026.**
+Quando existir texto oficial compilado ou consolidado, ele deve ser preferido. Quando a fonte oficial disponibiliza apenas o ato original e suas alterações separadamente, o projeto pode indicar uma fonte de consolidação distinta, mantendo também o acesso à fonte oficial. Essa diferença deve permanecer explícita na página da norma.
 
 ## Pesquisa
 
-A versão inicial pesquisa os metadados catalogados: título, subtítulo, descrição, número, órgão, situação, temas e observações. Ela ainda não indexa o texto integral das normas.
+A pesquisa considera dois grupos de informações com pesos diferentes:
 
-Os filtros e termos pesquisados são gravados na URL, permitindo compartilhar uma pesquisa específica.
+1. **Maior relevância:** título, número, temas, subtítulo e descrição.
+2. **Relevância secundária:** ocorrência dos termos no texto integral da norma.
+
+Dessa forma, uma norma cujo assunto principal corresponde à pesquisa tende a aparecer antes de outra em que a expressão aparece apenas incidentalmente em um artigo.
+
+Os filtros e termos pesquisados são mantidos na URL, permitindo compartilhar pesquisas específicas.
+
+## Atualização dos textos
+
+O workflow `Atualizar textos das normas` executa o coletor automaticamente quando a base ou as regras de coleta mudam e também pode ser executado manualmente no GitHub Actions.
+
+O processo:
+
+1. localiza a fonte cadastrada;
+2. tenta resolver o arquivo direto quando o cadastro aponta para uma página-lista do Idaf;
+3. extrai texto de HTML ou PDF;
+4. remove marcações de redações substituídas quando a fonte compilada as apresenta riscadas;
+5. formata artigos, parágrafos, incisos e alíneas;
+6. grava `textos/<id>.html`;
+7. atualiza o índice de busca e o relatório de coleta.
+
+Uma falha de coleta não é preenchida com texto inferido: o sistema registra a ocorrência e mantém o link para a fonte cadastrada até que a origem correta seja resolvida.
 
 ## Publicação no GitHub Pages
 
-O site não depende de build, framework ou servidor. Para publicar:
-
-1. Abra `Settings` no repositório.
-2. Acesse `Pages`.
-3. Em `Build and deployment`, escolha `Deploy from a branch`.
-4. Selecione a branch `main` e a pasta `/ (root)`.
-5. Salve.
-
-Depois da publicação, o endereço padrão deverá seguir o formato do GitHub Pages do usuário e do repositório.
+O site é estático. Em `Settings > Pages`, publique a branch `main` pela pasta `/ (root)`.
 
 ## Manutenção
 
-Para cadastrar nova norma, adicione um objeto ao array `window.NORMAS` em `data.js`, informando:
+Para cadastrar nova norma, adicione um objeto ao array `window.NORMAS` em `data.js`, informando identificador, esfera, tipo, número, data, situação, órgão, título, descrição, temas e fonte.
 
-- identificador (`id`);
-- esfera;
-- tipo;
-- número e data;
-- situação;
-- órgão;
-- título e subtítulo;
-- descrição curta;
-- temas;
-- nome da fonte oficial;
-- URL da fonte;
-- observação, quando necessária.
+Se a norma precisar de uma fonte diferente para extração do texto ou de regra especial de consolidação, registre a exceção em `source_overrides.json`.
 
 ## Aviso
 
-Antes de utilizar qualquer norma em parecer, laudo, relatório, orientação, decisão administrativa ou manifestação jurídica, confira a íntegra, a vigência e eventuais alterações posteriores diretamente na fonte oficial indicada.
+As transcrições existem para facilitar consulta e pesquisa. Antes de utilizar qualquer norma em parecer, laudo, relatório, orientação, decisão administrativa ou manifestação jurídica, confira a situação normativa e a publicação oficial. Em caso de divergência, prevalece a fonte oficial.
