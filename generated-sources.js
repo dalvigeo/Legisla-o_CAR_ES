@@ -269,10 +269,10 @@ window.NORM_SOURCES = {
   "in-idaf-005-2020": {
     "officialUrl": "https://idaf.es.gov.br/Media/idaf/Documentos/Legislação/GELCOF/Instrução%20Normativa%20005,%20de%2009%20mar%202020%20-%20Reserva%20Legal-1.pdf",
     "textSourceUrl": "https://idaf.es.gov.br/Media/idaf/Documentos/Legisla%C3%A7%C3%A3o/GELCOF/Instru%C3%A7%C3%A3o%20Normativa%20005,%20de%2009%20mar%202020%20-%20Reserva%20Legal-1.pdf",
-    "textSourceLabel": "Idaf — Política e Proteção Florestal — transcrição validada visualmente — transcrição validada visualmente — transcrição validada visualmente — transcrição validada visualmente — transcrição validada visualmente — transcrição validada visualmente",
+    "textSourceLabel": "Idaf — Política e Proteção Florestal — transcrição validada visualmente — transcrição validada visualmente — transcrição validada visualmente — transcrição validada visualmente — transcrição validada visualmente — transcrição validada visualmente — transcrição validada visualmente",
     "sourceKind": "PDF",
     "available": true,
-    "note": "Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte.",
+    "note": "Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte.",
     "manualValidated": true,
     "qualityBlocked": false
   },
@@ -288,11 +288,12 @@ window.NORM_SOURCES = {
   "in-idaf-003-2022": {
     "officialUrl": "https://idaf.es.gov.br/Media/idaf/Documentos/Legislação/GELCOF/IN%20IDAF%20003-22%20-%20Institui%20Vistoria%20Remota%20para%20CAR%20e%20Licenciamento.pdf",
     "textSourceUrl": "https://idaf.es.gov.br/Media/idaf/Documentos/Legisla%C3%A7%C3%A3o/GELCOF/IN%20IDAF%20003-22%20-%20Institui%20Vistoria%20Remota%20para%20CAR%20e%20Licenciamento.pdf",
-    "textSourceLabel": "Idaf — CAR, PRA e Reserva Legal",
+    "textSourceLabel": "Idaf — CAR, PRA e Reserva Legal — transcrição validada visualmente",
     "sourceKind": "PDF",
-    "available": false,
-    "note": "Extração bloqueada: artigos duplicados indicam mistura de colunas ou de atos distintos (art-1).",
-    "qualityBlocked": true
+    "available": true,
+    "note": "Extração bloqueada: artigos duplicados indicam mistura de colunas ou de atos distintos (art-1). Texto transcrito e conferido visualmente a partir da publicação-fonte.",
+    "qualityBlocked": false,
+    "manualValidated": true
   },
   "in-idaf-011-2023": {
     "officialUrl": "https://idaf.es.gov.br/Media/idaf/Documentos/Legislação/GELCOF/PRA-ES_Instrução%20Normativa%20Idaf_Programa%20de%20Regularização%20Ambiental.pdf",
@@ -429,12 +430,12 @@ window.NORM_SOURCES = {
   },
   "in-idaf-002-2023-barragens": {
     "officialUrl": "https://idaf.es.gov.br/Media/idaf/Documentos/Legislação/CLAM/Barragens/Instrução%20Normativa%20nº%20002,%20de%2008%20de%20março%20de%202023.pdf",
-    "textSourceUrl": "https://idaf.es.gov.br/Media/idaf/Documentos/Legisla%C3%A7%C3%A3o/CLAM/Barragens/Instru%C3%A7%C3%A3o%20Normativa%20n%C2%BA%20002,%20de%2008%20de%20mar%C3%A7o%20de%202023.pdf",
-    "textSourceLabel": "Idaf — Política e Proteção Florestal",
-    "sourceKind": "PDF",
-    "available": false,
-    "note": "Extração bloqueada: artigos duplicados indicam mistura de colunas ou de atos distintos (art-1).",
-    "qualityBlocked": true
+    "textSourceUrl": "https://taxesbrasil.com.br/boletins-diarios/instrucao-normativa-n-002-de-08-de-marco-de-2023/",
+    "textSourceLabel": "Taxes Brasil — reprodução integral da publicação no DOE/ES",
+    "sourceKind": "HTML",
+    "available": true,
+    "note": "Fonte textual estruturada utilizada para leitura da IN Idaf nº 002/2023; o PDF oficial disponibilizado pelo Idaf permanece disponível em paralelo.",
+    "qualityBlocked": false
   },
   "np-idaf-13-barragens": {
     "officialUrl": "https://idaf.es.gov.br/Media/idaf/Documentos/Normas%20de%20procedimentos/GELCOF/NP_Exclusiva_IDAF_n°013_-_Licenciamento_Ambiental_de_Barragens.pdf",

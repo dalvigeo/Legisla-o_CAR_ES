@@ -22,6 +22,8 @@
     "in-icmbio-24-2025",
     "in-icmbio-5-2016",
     "in-idaf-001-2023-barragens",
+    "in-idaf-002-2023-barragens",
+    "in-idaf-003-2022",
     "in-idaf-005-2013",
     "in-idaf-005-2015",
     "in-idaf-005-2020",
@@ -475,12 +477,10 @@
   ],
   "quality_blocked": [
     "decreto-es-4124-n-1997",
-    "in-idaf-002-2023-barragens",
-    "in-idaf-003-2022",
     "in-idaf-008-2014-barragens",
     "in-idaf-009-2014-barragens"
   ],
   "total_normas": 59,
-  "total_com_texto": 54,
-  "total_pendentes": 5
+  "total_com_texto": 56,
+  "total_pendentes": 3
 }
