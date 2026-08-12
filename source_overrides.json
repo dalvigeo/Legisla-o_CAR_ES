@@ -1,18 +1,16 @@
 {
   "decreto-es-3346-r-2013": {
-    "text_source_url": "https://leisestaduais.com.br/es/decreto-n-3346-2013-espirito-santo-altera-os-decretos-n-3346-r-de-11-07-2013-e-n-3-623-r-de-04-08-2014",
-    "text_source_label": "LeisEstaduais — texto compilado",
-    "note": "Usado como fonte de consolidação; manter também o link oficial do Idaf."
+    "note": "Texto-base obtido em fonte oficial. O art. 12 deve refletir a redação dada pelo Decreto Estadual nº 4.139-R/2017."
   },
   "decreto-es-4139-r-2017": {
-    "text_source_url": "https://leisestaduais.com.br/es/decreto-n-4139-2017-espirito-santo-regulamenta-o-licenciamento-ambiental-de-barragens-para-fins-agropecuarios-e-ou-usos-multiplos-no-estado",
-    "text_source_label": "LeisEstaduais — texto compilado",
-    "note": "A consolidação incorpora a alteração do Decreto nº 4.165-R/2017; manter também o link oficial do Idaf."
+    "text_source_url": "https://www.legisweb.com.br/legislacao/?id=347481",
+    "text_source_label": "LegisWeb — texto com alteração do Decreto nº 4.165-R/2017",
+    "note": "A fonte de leitura incorpora o parágrafo único acrescentado ao art. 7º pelo Decreto nº 4.165-R/2017. O link oficial do Idaf permanece disponível."
   },
   "decreto-es-4165-r-2017": {
-    "text_source_url": "https://leisestaduais.com.br/es/decreto-n-4165-2017-espirito-santo-altera-o-decreto-n-4139-r-de-10-08-2017-que-regulamentou-o-licenciamento-ambiental-de-barragens-para-fins-agropecuarios-e-ou-usos-multiplos",
-    "text_source_label": "LeisEstaduais",
-    "note": "Ato alterador preservado integralmente; manter também o link oficial do Idaf."
+    "text_source_url": "https://www.legisweb.com.br/legislacao/?id=352160",
+    "text_source_label": "LegisWeb — reprodução do ato alterador",
+    "note": "Ato alterador do Decreto Estadual nº 4.139-R/2017. O link oficial do Idaf permanece disponível."
   },
   "decreto-es-3410-r-2013": {
     "text_source_url": "https://www.legisweb.com.br/legislacao/?id=260705",
@@ -29,11 +27,24 @@
   "res-conama-302-2002": {
     "text_source_url": "https://www.legisweb.com.br/legislacao/?id=98315",
     "text_source_label": "LegisWeb — reprodução do ato histórico",
-    "note": "Norma revogada; o link oficial do CONAMA permanece disponível na ficha."
+    "note": "Norma revogada; o link oficial do CONAMA permanece disponível."
+  },
+  "in-icmbio-5-2016": {
+    "text_source_url": "https://williamfreire.com.br/nao-categorizado/instrucao-normativa-no-5-de-19-de-maio-de-2016/",
+    "text_source_label": "William Freire — reprodução do ato histórico",
+    "note": "Norma revogada pela IN ICMBio nº 24/2025; mantida apenas para consulta histórica."
+  },
+  "in-icmbio-24-2025": {
+    "text_source_url": "https://www.lex.com.br/instrucao-normativa-icmbio-no-24-de-12-de-agosto-de-2025/",
+    "text_source_label": "Lex — reprodução da IN ICMBio nº 24/2025",
+    "note": "O texto é consolidado editorialmente com as alterações da IN ICMBio nº 16/2026. A publicação oficial de ambas permanece indicada."
+  },
+  "in-icmbio-16-2026": {
+    "text_source_url": "https://ribmg.org.br/instrucao-normativa-icmbio-regularizacao-fundiaria/",
+    "text_source_label": "RIB-MG — reprodução da IN ICMBio nº 16/2026",
+    "note": "Ato alterador da IN ICMBio nº 24/2025. A publicação oficial no DOU permanece indicada."
   },
   "in-idaf-020-2017": {
-    "merge_amendment_id": "in-idaf-001-2023-barragens",
-    "merge_article": "32",
-    "note": "O art. 32 é atualizado automaticamente a partir da IN Idaf nº 001/2023."
+    "note": "O art. 32 deve refletir a alteração promovida pela IN Idaf nº 001/2023."
   }
 }
