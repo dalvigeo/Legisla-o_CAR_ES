@@ -1,0 +1,46 @@
+name: Atualizar textos das normas
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'data.js'
+      - 'source_overrides.json'
+      - 'scripts/build_legislation.py'
+      - '.github/workflows/atualizar-textos.yml'
+  schedule:
+    - cron: '20 9 1 * *'
+
+permissions:
+  contents: write
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Dependências
+        run: pip install requests beautifulsoup4 lxml pymupdf
+
+      - name: Gerar textos e índice de busca
+        run: python scripts/build_legislation.py
+
+      - name: Publicar conteúdo gerado no repositório
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add textos generated-index.js generated-sources.js generated-report.json
+          if git diff --cached --quiet; then
+            echo "Nenhuma alteração nos textos."
+          else
+            git commit -m "Atualiza textos normativos a partir das fontes"
+            git push
+          fi
