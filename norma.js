@@ -1,4 +1,5 @@
 const normas = window.NORMAS || [];
+const sourceMap = window.NORM_SOURCES || {};
 const params = new URLSearchParams(location.search);
 const normaId = params.get('id');
 const norma = normas.find(item => item.id === normaId);
@@ -25,6 +26,38 @@ function relatedNormas(current) {
     .map(entry => entry.item);
 }
 
+function escapeHtml(value = '') {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
+async function loadNormText(id, officialUrl) {
+  const target = document.getElementById('textoNorma');
+  try {
+    const response = await fetch(`textos/${encodeURIComponent(id)}.html`, { cache: 'no-cache' });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    target.innerHTML = await response.text();
+
+    if (location.hash) {
+      requestAnimationFrame(() => {
+        const element = document.getElementById(location.hash.slice(1));
+        if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+  } catch (error) {
+    target.innerHTML = `
+      <div class="notice">
+        <strong>Não foi possível carregar a transcrição desta norma.</strong>
+        Consulte a fonte cadastrada enquanto o conteúdo é atualizado.
+      </div>
+      <p><a class="source-link primary" href="${escapeHtml(officialUrl)}" target="_blank" rel="noopener">Acessar fonte ↗</a></p>`;
+  }
+}
+
 if (!norma) {
   document.title = 'Norma não encontrada | Legislação CAR/ES';
   content.innerHTML = `
@@ -34,6 +67,12 @@ if (!norma) {
       <a class="source-link primary" href="index.html">Voltar ao catálogo</a>
     </div>`;
 } else {
+  const source = sourceMap[norma.id] || {};
+  const officialUrl = source.officialUrl || norma.fonteUrl;
+  const textSourceUrl = source.textSourceUrl || officialUrl;
+  const textSourceLabel = source.textSourceLabel || norma.fonte || 'Fonte utilizada';
+  const sameSource = officialUrl === textSourceUrl;
+
   document.title = `${norma.titulo} | Legislação CAR/ES`;
   breadcrumbTitle.textContent = norma.titulo;
 
@@ -47,8 +86,13 @@ if (!norma) {
       </a>`).join('')
     : '<p>Nenhuma norma relacionada cadastrada nesta versão.</p>';
 
+  const sourceButtons = `
+    <a class="source-link primary" href="${escapeHtml(textSourceUrl)}" target="_blank" rel="noopener">Fonte do texto ↗</a>
+    ${!sameSource ? `<a class="source-link" href="${escapeHtml(officialUrl)}" target="_blank" rel="noopener">Fonte oficial ↗</a>` : ''}
+    <a class="source-link" href="busca.html?q=${encodeURIComponent((norma.temas || [])[0] || norma.numero)}">Pesquisar relacionadas</a>`;
+
   content.innerHTML = `
-    <article class="norma-header">
+    <article class="norma-header norma-header-compact">
       <div class="card-top">
         <span class="card-type">${norma.esfera} · ${norma.tipo}</span>
         <span class="status-badge ${statusClass(norma.status)}">${norma.status}</span>
@@ -57,45 +101,28 @@ if (!norma) {
       <p class="norma-description"><strong>${norma.subtitulo}</strong></p>
       <p class="norma-description">${norma.descricao}</p>
 
-      <div class="norma-meta">
-        <div class="meta-box">
-          <span class="meta-label">Número</span>
-          <span class="meta-value">${norma.numero}</span>
-        </div>
-        <div class="meta-box">
-          <span class="meta-label">Data</span>
-          <span class="meta-value">${norma.data}</span>
-        </div>
-        <div class="meta-box">
-          <span class="meta-label">Órgão</span>
-          <span class="meta-value">${norma.orgao}</span>
-        </div>
-        <div class="meta-box">
-          <span class="meta-label">Situação no catálogo</span>
-          <span class="meta-value">${norma.status}</span>
-        </div>
+      <div class="norma-meta norma-meta-compact">
+        <div class="meta-box"><span class="meta-label">Número</span><span class="meta-value">${norma.numero}</span></div>
+        <div class="meta-box"><span class="meta-label">Data</span><span class="meta-value">${norma.data}</span></div>
+        <div class="meta-box"><span class="meta-label">Órgão</span><span class="meta-value">${norma.orgao}</span></div>
+        <div class="meta-box"><span class="meta-label">Fonte da transcrição</span><span class="meta-value">${escapeHtml(textSourceLabel)}</span></div>
       </div>
 
       <div class="tags">${tags}</div>
-      <div class="norma-actions" style="margin-top:20px">
-        <a class="source-link primary" href="${norma.fonteUrl}" target="_blank" rel="noopener">Acessar fonte oficial ↗</a>
-        <a class="source-link" href="busca.html?q=${encodeURIComponent((norma.temas || [])[0] || norma.numero)}">Pesquisar normas relacionadas</a>
-      </div>
+      <div class="norma-actions">${sourceButtons}</div>
+      ${source.note ? `<div class="source-note">${escapeHtml(source.note)}</div>` : ''}
     </article>
 
-    <div class="info-grid">
-      <section class="info-card">
-        <h2>Fonte e conferência</h2>
-        <p><strong>${norma.fonte}</strong></p>
-        ${norma.observacao ? `<p>${norma.observacao}</p>` : ''}
-        <div class="notice">
-          O Legislação CAR/ES não substitui a publicação oficial. O catálogo serve para localizar normas e seus temas. Para aplicação técnica ou jurídica, confirme a íntegra, alterações posteriores, revogações e vigência diretamente na fonte oficial.
-        </div>
-      </section>
+    <section class="norm-text-card">
+      <div id="textoNorma" class="text-loading">Carregando texto da norma…</div>
+    </section>
 
-      <aside class="info-card">
-        <h2>Normas relacionadas</h2>
-        <div class="related-list">${relatedHtml}</div>
-      </aside>
-    </div>`;
+    <section class="related-section">
+      <div class="section-heading">
+        <div><span class="section-kicker">NAVEGAÇÃO</span><h2>Normas relacionadas</h2></div>
+      </div>
+      <div class="related-list related-grid">${relatedHtml}</div>
+    </section>`;
+
+  loadNormText(norma.id, officialUrl);
 }
