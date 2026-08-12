@@ -18,6 +18,8 @@
     "decreto-es-4139-r-2017",
     "decreto-es-4165-r-2017",
     "decreto-es-5736-r-2024",
+    "in-icmbio-24-2025",
+    "in-icmbio-5-2016",
     "in-idaf-001-2023-barragens",
     "in-idaf-005-2013",
     "in-idaf-005-2015",
@@ -245,13 +247,121 @@
       "id": "in-idaf-002-2023-barragens",
       "error": "controle de qualidade: artigos duplicados indicam mistura de colunas ou de atos distintos (art-1)",
       "source": "https://idaf.es.gov.br/Media/idaf/Documentos/Legisla%C3%A7%C3%A3o/CLAM/Barragens/Instru%C3%A7%C3%A3o%20Normativa%20n%C2%BA%20002,%20de%2008%20de%20mar%C3%A7o%20de%202023.pdf"
+    },
+    {
+      "id": "decreto-8235-2014",
+      "error": "fonte federal: HTTPSConnectionPool(host='www2.camara.leg.br', port=443): Max retries exceeded with url: /legin/fed/decret/2014/decreto-8235-5-maio-2014-778660-norma-pe.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www2.camara.leg.br', port=443) at 0x7f5d8a73dd30>, 'Connection to www2.camara.leg.br timed out. (connect timeout=45)'))",
+      "source": "https://www2.camara.leg.br/legin/fed/decret/2014/decreto-8235-5-maio-2014-778660-norma-pe.html"
+    },
+    {
+      "id": "lei-13887-2019",
+      "error": "fonte federal: HTTPSConnectionPool(host='www2.camara.leg.br', port=443): Max retries exceeded with url: /legin/fed/lei/2019/lei-13887-17-outubro-2019-789278-norma-pl.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www2.camara.leg.br', port=443) at 0x7f5d8a73e4b0>, 'Connection to www2.camara.leg.br timed out. (connect timeout=45)'))",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2019/lei-13887-17-outubro-2019-789278-norma-pl.html"
+    },
+    {
+      "id": "lei-12727-2012",
+      "error": "fonte federal: HTTPSConnectionPool(host='www2.camara.leg.br', port=443): Max retries exceeded with url: /legin/fed/lei/2012/lei-12727-17-outubro-2012-774405-norma-pl.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www2.camara.leg.br', port=443) at 0x7f5d8a73d5e0>, 'Connection to www2.camara.leg.br timed out. (connect timeout=45)'))",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2012/lei-12727-17-outubro-2012-774405-norma-pl.html"
+    },
+    {
+      "id": "decreto-6660-2008",
+      "error": "fonte federal: HTTPSConnectionPool(host='www2.camara.leg.br', port=443): Max retries exceeded with url: /legin/fed/decret/2008/decreto-6660-21-novembro-2008-584236-norma-pe.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www2.camara.leg.br', port=443) at 0x7f5d8a73fc50>, 'Connection to www2.camara.leg.br timed out. (connect timeout=45)'))",
+      "source": "https://www2.camara.leg.br/legin/fed/decret/2008/decreto-6660-21-novembro-2008-584236-norma-pe.html"
+    },
+    {
+      "id": "lei-14595-2023",
+      "error": "fonte federal: HTTPSConnectionPool(host='www2.camara.leg.br', port=443): Max retries exceeded with url: /legin/fed/lei/2023/lei-14595-5-junho-2023-794260-norma-pl.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www2.camara.leg.br', port=443) at 0x7f5d8a73e8d0>, 'Connection to www2.camara.leg.br timed out. (connect timeout=45)'))",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2023/lei-14595-5-junho-2023-794260-norma-pl.html"
+    },
+    {
+      "id": "lei-12651-2012",
+      "error": "fonte federal: HTTPSConnectionPool(host='www2.camara.leg.br', port=443): Max retries exceeded with url: /legin/fed/lei/2012/lei-12651-25-maio-2012-613076-norma-pl.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www2.camara.leg.br', port=443) at 0x7f5d905a0d70>, 'Connection to www2.camara.leg.br timed out. (connect timeout=45)'))",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2012/lei-12651-25-maio-2012-613076-norma-pl.html"
+    },
+    {
+      "id": "decreto-7830-2012",
+      "error": "fonte federal: HTTPSConnectionPool(host='www2.camara.leg.br', port=443): Max retries exceeded with url: /legin/fed/decret/2012/decreto-7830-17-outubro-2012-774407-norma-pe.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www2.camara.leg.br', port=443) at 0x7f5d8a73d8e0>, 'Connection to www2.camara.leg.br timed out. (connect timeout=45)'))",
+      "source": "https://www2.camara.leg.br/legin/fed/decret/2012/decreto-7830-17-outubro-2012-774407-norma-pe.html"
+    },
+    {
+      "id": "lei-11428-2006",
+      "error": "fonte federal: HTTPSConnectionPool(host='www2.camara.leg.br', port=443): Max retries exceeded with url: /legin/fed/lei/2006/lei-11428-22-dezembro-2006-548704-norma-pl.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www2.camara.leg.br', port=443) at 0x7f5d8a73ee40>, 'Connection to www2.camara.leg.br timed out. (connect timeout=45)'))",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2006/lei-11428-22-dezembro-2006-548704-norma-pl.html"
+    },
+    {
+      "id": "decreto-5746-2006",
+      "error": "fonte federal: HTTPSConnectionPool(host='www2.camara.leg.br', port=443): Max retries exceeded with url: /legin/fed/decret/2006/decreto-5746-5-abril-2006-541657-norma-pe.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www2.camara.leg.br', port=443) at 0x7f5d8a751160>, 'Connection to www2.camara.leg.br timed out. (connect timeout=45)'))",
+      "source": "https://www2.camara.leg.br/legin/fed/decret/2006/decreto-5746-5-abril-2006-541657-norma-pe.html"
+    },
+    {
+      "id": "lei-6015-1973",
+      "error": "fonte federal: HTTPSConnectionPool(host='www2.camara.leg.br', port=443): Max retries exceeded with url: /legin/fed/lei/1970-1979/lei-6015-31-dezembro-1973-357511-norma-pl.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www2.camara.leg.br', port=443) at 0x7f5d8a751040>, 'Connection to www2.camara.leg.br timed out. (connect timeout=45)'))",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/1970-1979/lei-6015-31-dezembro-1973-357511-norma-pl.html"
+    },
+    {
+      "id": "lei-9605-1998",
+      "error": "fonte federal: HTTPSConnectionPool(host='www2.camara.leg.br', port=443): Max retries exceeded with url: /legin/fed/lei/1998/lei-9605-12-fevereiro-1998-365397-norma-pl.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www2.camara.leg.br', port=443) at 0x7f5d8a751e50>, 'Connection to www2.camara.leg.br timed out. (connect timeout=45)'))",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/1998/lei-9605-12-fevereiro-1998-365397-norma-pl.html"
+    },
+    {
+      "id": "decreto-9640-2018",
+      "error": "fonte federal: HTTPSConnectionPool(host='www2.camara.leg.br', port=443): Max retries exceeded with url: /legin/fed/decret/2018/decreto-9640-27-dezembro-2018-787547-norma-pe.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www2.camara.leg.br', port=443) at 0x7f5d8a750170>, 'Connection to www2.camara.leg.br timed out. (connect timeout=45)'))",
+      "source": "https://www2.camara.leg.br/legin/fed/decret/2018/decreto-9640-27-dezembro-2018-787547-norma-pe.html"
+    },
+    {
+      "id": "lei-9985-2000",
+      "error": "fonte federal: HTTPSConnectionPool(host='www2.camara.leg.br', port=443): Max retries exceeded with url: /legin/fed/lei/2000/lei-9985-18-julho-2000-359708-norma-pl.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www2.camara.leg.br', port=443) at 0x7f5d8a7504d0>, 'Connection to www2.camara.leg.br timed out. (connect timeout=45)'))",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2000/lei-9985-18-julho-2000-359708-norma-pl.html/"
+    },
+    {
+      "id": "decreto-4340-2002",
+      "error": "fonte federal: HTTPSConnectionPool(host='www2.camara.leg.br', port=443): Max retries exceeded with url: /legin/fed/decret/2002/decreto-4340-22-agosto-2002-451270-norma-pe.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www2.camara.leg.br', port=443) at 0x7f5d8a751f40>, 'Connection to www2.camara.leg.br timed out. (connect timeout=45)'))",
+      "source": "https://www2.camara.leg.br/legin/fed/decret/2002/decreto-4340-22-agosto-2002-451270-norma-pe.html"
+    },
+    {
+      "id": "lei-10267-2001",
+      "error": "fonte federal: HTTPSConnectionPool(host='www2.camara.leg.br', port=443): Max retries exceeded with url: /legin/fed/lei/2001/lei-10267-28-agosto-2001-391397-norma-pl.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www2.camara.leg.br', port=443) at 0x7f5d8a752150>, 'Connection to www2.camara.leg.br timed out. (connect timeout=45)'))",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2001/lei-10267-28-agosto-2001-391397-norma-pl.html"
+    },
+    {
+      "id": "decreto-4449-2002",
+      "error": "fonte federal: HTTPSConnectionPool(host='www2.camara.leg.br', port=443): Max retries exceeded with url: /legin/fed/decret/2002/decreto-4449-30-outubro-2002-484374-norma-pe.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www2.camara.leg.br', port=443) at 0x7f5d8a7519a0>, 'Connection to www2.camara.leg.br timed out. (connect timeout=45)'))",
+      "source": "https://www2.camara.leg.br/legin/fed/decret/2002/decreto-4449-30-outubro-2002-484374-norma-pe.html"
+    },
+    {
+      "id": "lei-7803-1989",
+      "error": "fonte federal: HTTPSConnectionPool(host='www2.camara.leg.br', port=443): Max retries exceeded with url: /legin/fed/lei/1989/lei-7803-18-julho-1989-367693-norma-pl.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www2.camara.leg.br', port=443) at 0x7f5d8a753d40>, 'Connection to www2.camara.leg.br timed out. (connect timeout=45)'))",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/1989/lei-7803-18-julho-1989-367693-norma-pl.html"
+    },
+    {
+      "id": "decreto-6514-2008",
+      "error": "fonte federal: HTTPSConnectionPool(host='www2.camara.leg.br', port=443): Max retries exceeded with url: /legin/fed/decret/2008/decreto-6514-22-julho-2008-578464-norma-pe.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www2.camara.leg.br', port=443) at 0x7f5d8a7527e0>, 'Connection to www2.camara.leg.br timed out. (connect timeout=45)'))",
+      "source": "https://www2.camara.leg.br/legin/fed/decret/2008/decreto-6514-22-julho-2008-578464-norma-pe.html"
+    },
+    {
+      "id": "mp-2166-67-2001",
+      "error": "fonte federal: HTTPSConnectionPool(host='www2.camara.leg.br', port=443): Max retries exceeded with url: /legin/fed/medpro/2001/medidaprovisoria-2166-67-24-agosto-2001-393708-norma-pe.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www2.camara.leg.br', port=443) at 0x7f5d8a780260>, 'Connection to www2.camara.leg.br timed out. (connect timeout=45)'))",
+      "source": "https://www2.camara.leg.br/legin/fed/medpro/2001/medidaprovisoria-2166-67-24-agosto-2001-393708-norma-pe.html"
+    },
+    {
+      "id": "lei-12334-2010",
+      "error": "fonte federal: HTTPSConnectionPool(host='www2.camara.leg.br', port=443): Max retries exceeded with url: /legin/fed/lei/2010/lei-12334-20-setembro-2010-608607-norma-pl.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www2.camara.leg.br', port=443) at 0x7f5d8a752cc0>, 'Connection to www2.camara.leg.br timed out. (connect timeout=45)'))",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/2010/lei-12334-20-setembro-2010-608607-norma-pl.html"
+    },
+    {
+      "id": "lei-4771-1965",
+      "error": "fonte federal: HTTPSConnectionPool(host='www2.camara.leg.br', port=443): Max retries exceeded with url: /legin/fed/lei/1960-1969/lei-4771-15-setembro-1965-369026-norma-pl.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www2.camara.leg.br', port=443) at 0x7f5d8a7535f0>, 'Connection to www2.camara.leg.br timed out. (connect timeout=45)'))",
+      "source": "https://www2.camara.leg.br/legin/fed/lei/1960-1969/lei-4771-15-setembro-1965-369026-norma-pl.html"
+    },
+    {
+      "id": "decreto-23793-1934",
+      "error": "fonte federal: HTTPSConnectionPool(host='www2.camara.leg.br', port=443): Max retries exceeded with url: /legin/fed/decret/1930-1939/decreto-23793-23-janeiro-1934-498279-norma-pe.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www2.camara.leg.br', port=443) at 0x7f5d8a753170>, 'Connection to www2.camara.leg.br timed out. (connect timeout=45)'))",
+      "source": "https://www2.camara.leg.br/legin/fed/decret/1930-1939/decreto-23793-23-janeiro-1934-498279-norma-pe.html"
     }
   ],
   "quality_blocked": [
     "decreto-es-4124-n-1997",
     "in-icmbio-16-2026",
-    "in-icmbio-24-2025",
-    "in-icmbio-5-2016",
     "in-idaf-002-2023-barragens",
     "in-idaf-003-2022",
     "in-idaf-008-2014-barragens",
@@ -261,6 +371,6 @@
     "lei-es-7058-2002"
   ],
   "total_normas": 59,
-  "total_com_texto": 48,
-  "total_pendentes": 11
+  "total_com_texto": 50,
+  "total_pendentes": 9
 }
