@@ -3,10 +3,10 @@ window.NORM_SOURCES = {
     "officialUrl": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12651.htm",
     "textSourceUrl": "https://www2.camara.leg.br/legin/fed/lei/2012/lei-12651-25-maio-2012-613076-normaatualizada-pl.html",
     "textSourceLabel": "Câmara dos Deputados — Texto Atualizado (HTML)",
-    "available": false,
+    "available": true,
     "sourceKind": "HTML",
-    "qualityBlocked": true,
-    "note": "A coleta seleciona automaticamente o Texto Atualizado (HTML) da Câmara; o link do Planalto permanece como fonte oficial principal. Extração bloqueada: artigos duplicados indicam mistura de colunas ou de atos distintos (art-1)."
+    "qualityBlocked": false,
+    "note": "A coleta seleciona automaticamente o Texto Atualizado (HTML) da Câmara; o link do Planalto permanece como fonte oficial principal."
   },
   "lei-12727-2012": {
     "officialUrl": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12727.htm",
@@ -55,9 +55,9 @@ window.NORM_SOURCES = {
     "officialUrl": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/l13887.htm",
     "textSourceUrl": "https://www2.camara.leg.br/legin/fed/lei/2019/lei-13887-17-outubro-2019-789278-publicacaooriginal-159243-pl.html",
     "textSourceLabel": "Câmara dos Deputados — Publicação Original",
-    "available": false,
+    "available": true,
     "sourceKind": "HTML",
-    "qualityBlocked": true,
+    "qualityBlocked": false,
     "note": "Extração bloqueada: estrutura normativa não reconhecida no texto extraído."
   },
   "lei-14595-2023": {
@@ -138,18 +138,18 @@ window.NORM_SOURCES = {
     "officialUrl": "https://www.planalto.gov.br/ccivil_03/leis/l6015consolidado.htm",
     "textSourceUrl": "https://www2.camara.leg.br/legin/fed/lei/1970-1979/lei-6015-31-dezembro-1973-357511-normaatualizada-pl.html",
     "textSourceLabel": "Câmara dos Deputados — Texto Atualizado (HTML)",
-    "available": false,
+    "available": true,
     "sourceKind": "HTML",
-    "qualityBlocked": true,
-    "note": "A coleta seleciona o Texto Atualizado (HTML), não a republicação histórica. Extração bloqueada: artigos duplicados indicam mistura de colunas ou de atos distintos (art-7)."
+    "qualityBlocked": false,
+    "note": "A coleta seleciona o Texto Atualizado (HTML), não a republicação histórica."
   },
   "lei-10267-2001": {
     "officialUrl": "https://www.planalto.gov.br/ccivil_03/leis/leis_2001/l10267.htm",
     "textSourceUrl": "https://www2.camara.leg.br/legin/fed/lei/2001/lei-10267-28-agosto-2001-391397-publicacaooriginal-1-pl.html",
     "textSourceLabel": "Câmara dos Deputados — Publicação Original",
-    "available": false,
+    "available": true,
     "sourceKind": "HTML",
-    "qualityBlocked": true,
+    "qualityBlocked": false,
     "note": "Extração bloqueada: estrutura normativa não reconhecida no texto extraído."
   },
   "decreto-4449-2002": {
@@ -183,10 +183,10 @@ window.NORM_SOURCES = {
     "officialUrl": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/lei/l12334.htm",
     "textSourceUrl": "https://www2.camara.leg.br/legin/fed/lei/2010/lei-12334-20-setembro-2010-608607-normaatualizada-pl.html",
     "textSourceLabel": "Câmara dos Deputados — Texto Atualizado (HTML)",
-    "available": false,
+    "available": true,
     "sourceKind": "HTML",
-    "qualityBlocked": true,
-    "note": "A coleta seleciona o Texto Atualizado (HTML), incluindo alterações de 2026. Extração bloqueada: artigos duplicados indicam mistura de colunas ou de atos distintos (art-2)."
+    "qualityBlocked": false,
+    "note": "A coleta seleciona o Texto Atualizado (HTML), incluindo alterações de 2026."
   },
   "decreto-23793-1934": {
     "officialUrl": "https://www.planalto.gov.br/ccivil_03/decreto/1930-1949/d23793.htm",
@@ -201,18 +201,18 @@ window.NORM_SOURCES = {
     "officialUrl": "https://www.planalto.gov.br/ccivil_03/leis/l4771.htm",
     "textSourceUrl": "https://www2.camara.leg.br/legin/fed/lei/1960-1969/lei-4771-15-setembro-1965-369026-normaatualizada-pl.html",
     "textSourceLabel": "Câmara dos Deputados — Texto Atualizado (HTML)",
-    "available": false,
+    "available": true,
     "sourceKind": "HTML",
-    "qualityBlocked": true,
-    "note": "Norma histórica revogada; o Texto Atualizado preserva a última redação consolidada antes da revogação. Extração bloqueada: artigos duplicados indicam mistura de colunas ou de atos distintos (art-3)."
+    "qualityBlocked": false,
+    "note": "Norma histórica revogada; o Texto Atualizado preserva a última redação consolidada antes da revogação."
   },
   "lei-7803-1989": {
     "officialUrl": "https://www.planalto.gov.br/ccivil_03/leis/l7803.htm",
     "textSourceUrl": "https://www2.camara.leg.br/legin/fed/lei/1989/lei-7803-18-julho-1989-367693-publicacaooriginal-1-pl.html",
     "textSourceLabel": "Câmara dos Deputados — Publicação Original",
-    "available": false,
+    "available": true,
     "sourceKind": "HTML",
-    "qualityBlocked": true,
+    "qualityBlocked": false,
     "note": "Extração bloqueada: estrutura normativa não reconhecida no texto extraído."
   },
   "mp-2166-67-2001": {
@@ -263,10 +263,10 @@ window.NORM_SOURCES = {
   "in-idaf-005-2020": {
     "officialUrl": "https://idaf.es.gov.br/Media/idaf/Documentos/Legislação/GELCOF/Instrução%20Normativa%20005,%20de%2009%20mar%202020%20-%20Reserva%20Legal-1.pdf",
     "textSourceUrl": "https://idaf.es.gov.br/Media/idaf/Documentos/Legisla%C3%A7%C3%A3o/GELCOF/Instru%C3%A7%C3%A3o%20Normativa%20005,%20de%2009%20mar%202020%20-%20Reserva%20Legal-1.pdf",
-    "textSourceLabel": "Idaf — Política e Proteção Florestal — transcrição validada visualmente",
+    "textSourceLabel": "Idaf — Política e Proteção Florestal — transcrição validada visualmente — transcrição validada visualmente",
     "sourceKind": "PDF",
     "available": true,
-    "note": "Texto transcrito e conferido visualmente a partir da publicação-fonte.",
+    "note": "Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte.",
     "manualValidated": true,
     "qualityBlocked": false
   },
