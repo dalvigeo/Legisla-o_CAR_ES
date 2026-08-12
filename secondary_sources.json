@@ -19,6 +19,16 @@
     "label": "Revista Procampo — reprodução integral da norma",
     "note": "Usada porque o PDF oficial do Diário Oficial possui leitura em colunas que contamina a extração automática; a fonte oficial do Idaf permanece disponível."
   },
+  "lei-es-5361-1996": {
+    "url": "https://www.legisweb.com.br/legislacao/?id=125907",
+    "label": "LegisWeb — texto da Lei Estadual nº 5.361/1996",
+    "note": "Fonte textual estruturada usada para leitura, com indicações de redações posteriores. O PDF disponibilizado pelo Idaf permanece como fonte oficial paralela."
+  },
+  "lei-es-7058-2002": {
+    "url": "https://www.normasbrasil.com.br/norma/lei-7058-2002-es_125482.html",
+    "label": "Normas Brasil — texto da Lei Estadual nº 7.058/2002",
+    "note": "Fonte textual estruturada usada para leitura; o PDF disponibilizado pelo Idaf permanece como fonte oficial paralela."
+  },
   "decreto-es-4139-r-2017": {
     "url": "https://www.legisweb.com.br/legislacao/?id=347481",
     "label": "LegisWeb — texto consolidado",
