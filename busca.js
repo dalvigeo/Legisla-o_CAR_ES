@@ -1,4 +1,5 @@
 const normas = window.NORMAS || [];
+const textIndex = new Map((window.NORM_TEXT_INDEX || []).map(item => [item.id, item.text || '']));
 
 const searchResults = document.getElementById('searchResults');
 const searchInput = document.getElementById('searchInput');
@@ -19,18 +20,13 @@ function normalizeText(value = '') {
     .trim();
 }
 
-function searchableText(norma) {
-  return normalizeText([
-    norma.titulo,
-    norma.subtitulo,
-    norma.descricao,
-    norma.tipo,
-    norma.numero,
-    norma.orgao,
-    norma.status,
-    ...(norma.temas || []),
-    norma.observacao || ''
-  ].join(' '));
+function escapeHtml(value = '') {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
 }
 
 function statusClass(status) {
@@ -39,10 +35,84 @@ function statusClass(status) {
   return 'status-historica';
 }
 
-function cardTemplate(norma) {
+function fieldsFor(norma) {
+  return {
+    titulo: normalizeText(norma.titulo),
+    numero: normalizeText(norma.numero),
+    temas: normalizeText((norma.temas || []).join(' ')),
+    subtitulo: normalizeText(norma.subtitulo),
+    descricao: normalizeText(norma.descricao),
+    orgao: normalizeText(norma.orgao),
+    observacao: normalizeText(norma.observacao || ''),
+    texto: normalizeText(textIndex.get(norma.id) || '')
+  };
+}
+
+function scoreNorma(norma, terms, phrase) {
+  if (!terms.length) return { score: 0, fields: fieldsFor(norma) };
+  const fields = fieldsFor(norma);
+  const weights = {
+    titulo: 32,
+    numero: 32,
+    temas: 26,
+    subtitulo: 18,
+    descricao: 10,
+    orgao: 6,
+    observacao: 4,
+    texto: 1
+  };
+  let score = 0;
+  for (const term of terms) {
+    let found = false;
+    for (const [field, value] of Object.entries(fields)) {
+      if (value.includes(term)) {
+        found = true;
+        score += weights[field];
+        if (value === term) score += weights[field] * 0.5;
+      }
+    }
+    if (!found) return null;
+  }
+  if (phrase) {
+    if (fields.titulo.includes(phrase) || fields.numero.includes(phrase)) score += 45;
+    else if (fields.temas.includes(phrase) || fields.subtitulo.includes(phrase)) score += 25;
+    else if (fields.descricao.includes(phrase)) score += 10;
+    else if (fields.texto.includes(phrase)) score += 2;
+  }
+  return { score, fields };
+}
+
+function makeSnippet(norma, rawQuery) {
+  const rawText = textIndex.get(norma.id) || '';
+  if (!rawText || !rawQuery.trim()) return '';
+  const normalizedQuery = normalizeText(rawQuery);
+  const terms = normalizedQuery.split(' ').filter(Boolean);
+  const rawLower = rawText.toLocaleLowerCase('pt-BR');
+  let position = -1;
+  for (const term of terms) {
+    const pos = normalizeText(rawText).indexOf(term);
+    if (pos >= 0) {
+      // A posição normalizada não é idêntica à original; aproximamos buscando a palavra sem acento quando possível.
+      const direct = rawLower.indexOf(term);
+      position = direct >= 0 ? direct : Math.min(pos, rawText.length - 1);
+      break;
+    }
+  }
+  if (position < 0) return '';
+  const start = Math.max(0, position - 120);
+  const end = Math.min(rawText.length, position + 260);
+  let snippet = rawText.slice(start, end).replace(/\s+/g, ' ').trim();
+  if (start > 0) snippet = '…' + snippet;
+  if (end < rawText.length) snippet += '…';
+  return escapeHtml(snippet);
+}
+
+function cardTemplate(entry, rawQuery) {
+  const norma = entry.norma;
   const tags = (norma.temas || []).slice(0, 6).map(t => `<span class="tag">${t}</span>`).join('');
+  const snippet = makeSnippet(norma, rawQuery);
   return `
-    <article class="card">
+    <article class="card search-result-card">
       <div class="card-top">
         <span class="card-type">${norma.esfera} · ${norma.tipo}</span>
         <span class="status-badge ${statusClass(norma.status)}">${norma.status}</span>
@@ -50,9 +120,10 @@ function cardTemplate(norma) {
       <h3>${norma.titulo}</h3>
       <p><strong>${norma.subtitulo}</strong></p>
       <p>${norma.descricao}</p>
+      ${snippet ? `<div class="search-snippet"><span>Ocorrência no texto:</span>${snippet}</div>` : ''}
       <div class="tags">${tags}</div>
       <div class="card-actions">
-        <a class="card-link" href="norma.html?id=${encodeURIComponent(norma.id)}">Consultar ficha →</a>
+        <a class="card-link" href="norma.html?id=${encodeURIComponent(norma.id)}">Abrir texto da norma →</a>
       </div>
     </article>`;
 }
@@ -68,22 +139,26 @@ function populateThemes() {
 }
 
 function getFiltered() {
-  const query = normalizeText(searchInput.value);
+  const rawQuery = searchInput.value;
+  const query = normalizeText(rawQuery);
   const terms = query.split(' ').filter(Boolean);
   const sphere = sphereFilter.value;
   const status = statusFilter.value;
   const theme = themeFilter.value;
 
-  return normas.filter(norma => {
-    if (sphere && norma.esfera !== sphere) return false;
-    if (status && norma.status !== status) return false;
-    if (theme && !(norma.temas || []).includes(theme)) return false;
-    if (terms.length) {
-      const haystack = searchableText(norma);
-      if (!terms.every(term => haystack.includes(term))) return false;
-    }
-    return true;
-  });
+  return normas
+    .filter(norma => {
+      if (sphere && norma.esfera !== sphere) return false;
+      if (status && norma.status !== status) return false;
+      if (theme && !(norma.temas || []).includes(theme)) return false;
+      return true;
+    })
+    .map(norma => {
+      const scored = scoreNorma(norma, terms, query);
+      return scored ? { norma, score: scored.score } : null;
+    })
+    .filter(Boolean)
+    .sort((a, b) => b.score - a.score || a.norma.titulo.localeCompare(b.norma.titulo, 'pt-BR'));
 }
 
 function syncUrl() {
@@ -98,7 +173,7 @@ function syncUrl() {
 
 function render() {
   const filtered = getFiltered();
-  searchResults.innerHTML = filtered.map(cardTemplate).join('');
+  searchResults.innerHTML = filtered.map(entry => cardTemplate(entry, searchInput.value)).join('');
   emptyState.hidden = filtered.length !== 0;
   resultCount.textContent = `${filtered.length} de ${normas.length} normas encontradas`;
   syncUrl();
