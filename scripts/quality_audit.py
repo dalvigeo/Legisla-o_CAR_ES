@@ -77,7 +77,24 @@ def garbage_tokens(text: str) -> float:
     return bad / max(1, len(tokens))
 
 
-def markup_reason(soup: BeautifulSoup, norma: dict) -> str | None:
+def is_trusted_structured_html(source: dict) -> bool:
+    url = str(source.get('textSourceUrl', '')).lower()
+    label = str(source.get('textSourceLabel', '')).lower()
+    trusted_domains = [
+        'camara.leg.br',
+        'legisweb.com.br',
+        'normasbrasil.com.br',
+        'revistaprocampo.com.br',
+        'lex.com.br',
+        'irib.org.br',
+        'gov.br/',
+        'in.gov.br',
+    ]
+    trusted_labels = ['texto atualizado', 'texto consolidado', 'legislação informatizada']
+    return any(domain in url for domain in trusted_domains) or any(term in label for term in trusted_labels)
+
+
+def markup_reason(soup: BeautifulSoup) -> str | None:
     article_ids = [tag.get('id') for tag in soup.select('[id^="art-"]') if tag.get('id')]
     duplicates = [key for key, count in Counter(article_ids).items() if count > 1]
     if duplicates:
@@ -94,14 +111,13 @@ def markup_reason(soup: BeautifulSoup, norma: dict) -> str | None:
         'concessao de uso seag',
     ]
     hits = [marker for marker in contamination if marker in text]
-    # Alguns atos podem legitimamente citar contrato; exige marcador forte ou mais de um indício.
     strong = {'ordem de servico', 'conceder recesso aos estagiario', 'extrato do edital de notificacao'}
     if len(hits) >= 2 or any(hit in strong for hit in hits):
         return 'conteúdo de outro ato administrativo misturado à norma durante a leitura do Diário Oficial'
     return None
 
 
-def quality_reason(text: str, norma: dict) -> str | None:
+def quality_reason(text: str, norma: dict, strict_structure: bool = True) -> str | None:
     plain = re.sub(r'\s+', ' ', text).strip()
     n = normalize(plain)
     if len(plain) < 160:
@@ -111,11 +127,12 @@ def quality_reason(text: str, norma: dict) -> str | None:
     if garbage_tokens(plain) > .035:
         return 'padrão de tokens corrompidos na extração textual'
 
-    tipo = norma.get('tipo', '').lower()
-    if any(x in tipo for x in ['lei', 'decreto', 'instrução normativa', 'resolução']):
-        legal_markers = sum(marker in n for marker in ['art 1', 'resolve', 'decreta', 'fac o saber', 'presidente', 'governador', 'diretor'])
-        if legal_markers == 0 and len(plain) > 600:
-            return 'estrutura normativa não reconhecida no texto extraído'
+    if strict_structure:
+        tipo = norma.get('tipo', '').lower()
+        if any(x in tipo for x in ['lei', 'decreto', 'instrução normativa', 'resolução']):
+            legal_markers = sum(marker in n for marker in ['art 1', 'resolve', 'decreta', 'fac o saber', 'presidente', 'governador', 'diretor'])
+            if legal_markers == 0 and len(plain) > 600:
+                return 'estrutura normativa não reconhecida no texto extraído'
     return None
 
 
@@ -150,18 +167,25 @@ def main():
             bad_ids.add(nid)
             continue
 
-        reason = markup_reason(soup, norma)
+        source = sources.get(nid, {})
+        trusted_html = is_trusted_structured_html(source)
+
+        # Artigos repetidos são comuns em textos compilados que preservam notas/redações
+        # anteriores. Esse sinal é usado apenas em PDFs/DOU e fontes não estruturadas.
+        reason = None if trusted_html else markup_reason(soup)
         if not reason:
-            reason = quality_reason(soup.get_text(' ', strip=True), norma)
+            reason = quality_reason(
+                soup.get_text(' ', strip=True),
+                norma,
+                strict_structure=not trusted_html,
+            )
         if not reason:
             continue
 
-        # Uma transcrição visualmente validada prevalece sobre heurísticas automáticas.
-        if sources.get(nid, {}).get('manualValidated'):
+        if source.get('manualValidated'):
             continue
 
         bad_ids.add(nid)
-        source = sources.get(nid, {})
         url = source.get('textSourceUrl') or source.get('officialUrl') or norma.get('fonteUrl', '#')
         path.write_text(unavailable_html(norma, url, reason), encoding='utf-8')
         source['available'] = False
