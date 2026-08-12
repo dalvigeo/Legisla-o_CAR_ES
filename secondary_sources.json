@@ -19,6 +19,11 @@
     "label": "Revista Procampo — reprodução integral da norma",
     "note": "Usada porque o PDF oficial do Diário Oficial possui leitura em colunas que contamina a extração automática; a fonte oficial do Idaf permanece disponível."
   },
+  "in-idaf-002-2023": {
+    "url": "https://taxesbrasil.com.br/boletins-diarios/instrucao-normativa-n-002-de-08-de-marco-de-2023/",
+    "label": "Taxes Brasil — reprodução integral da publicação no DOE/ES",
+    "note": "Fonte textual estruturada utilizada para leitura da IN Idaf nº 002/2023; o PDF oficial disponibilizado pelo Idaf permanece disponível em paralelo."
+  },
   "lei-es-5361-1996": {
     "url": "https://www.legisweb.com.br/legislacao/?id=125907",
     "label": "LegisWeb — texto da Lei Estadual nº 5.361/1996",
