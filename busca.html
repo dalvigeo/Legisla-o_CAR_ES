@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Pesquisa no catálogo de normas aplicadas ao Cadastro Ambiental Rural no Espírito Santo.">
+  <meta name="description" content="Pesquisa em títulos, temas e texto integral das normas aplicadas ao Cadastro Ambiental Rural no Espírito Santo.">
   <title>Pesquisar | Legislação CAR/ES</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -12,7 +12,7 @@
     <div class="container header-inner">
       <div>
         <a class="brand" href="index.html">Legislação CAR/ES</a>
-        <p class="brand-subtitle">Pesquisa por norma, órgão, tema e palavra-chave</p>
+        <p class="brand-subtitle">Pesquisa por norma, tema, palavra-chave e conteúdo</p>
       </div>
       <a class="source-link compact" href="index.html">← Catálogo</a>
     </div>
@@ -23,12 +23,12 @@
       <div class="container">
         <span class="eyebrow">PESQUISA LEGISLATIVA</span>
         <h1>Pesquisar nas normas</h1>
-        <p>A pesquisa utiliza os títulos, descrições, números, órgãos, situações e temas cadastrados. Esta versão não pesquisa o texto integral dos atos normativos.</p>
+        <p>A pesquisa prioriza título, número, temas e descrição, mas também localiza ocorrências no texto integral das normas. Resultados encontrados apenas no conteúdo aparecem com peso secundário.</p>
 
         <div class="search-panel">
           <label for="searchInput">Termo de pesquisa</label>
           <div class="search-row">
-            <input id="searchInput" type="search" placeholder="Ex.: reserva legal, barragem, 12.651, Mata Atlântica, compensação..." autocomplete="off" autofocus>
+            <input id="searchInput" type="search" placeholder="Ex.: reserva legal, barragem, art. 68, vegetação nativa, compensação..." autocomplete="off" autofocus>
             <button id="clearSearch" class="secondary-button" type="button">Limpar</button>
           </div>
           <div class="filters">
@@ -64,12 +64,13 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>A pesquisa serve para localizar normas no catálogo. Consulte a ficha e acesse a fonte oficial antes de utilizar a norma.</p>
+      <p>A pesquisa auxilia a localização dos dispositivos. Em cada norma, o texto transcrito é acompanhado do link para a fonte utilizada e, quando disponível, da fonte oficial.</p>
       <p>Projeto DescompliCAR · Legislação CAR/ES.</p>
     </div>
   </footer>
 
   <script src="data.js"></script>
+  <script src="generated-index.js"></script>
   <script src="busca.js"></script>
 </body>
 </html>
