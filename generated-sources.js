@@ -269,10 +269,10 @@ window.NORM_SOURCES = {
   "in-idaf-005-2020": {
     "officialUrl": "https://idaf.es.gov.br/Media/idaf/Documentos/Legislação/GELCOF/Instrução%20Normativa%20005,%20de%2009%20mar%202020%20-%20Reserva%20Legal-1.pdf",
     "textSourceUrl": "https://idaf.es.gov.br/Media/idaf/Documentos/Legisla%C3%A7%C3%A3o/GELCOF/Instru%C3%A7%C3%A3o%20Normativa%20005,%20de%2009%20mar%202020%20-%20Reserva%20Legal-1.pdf",
-    "textSourceLabel": "Idaf — Política e Proteção Florestal — transcrição validada visualmente — transcrição validada visualmente — transcrição validada visualmente — transcrição validada visualmente",
+    "textSourceLabel": "Idaf — Política e Proteção Florestal — transcrição validada visualmente — transcrição validada visualmente — transcrição validada visualmente — transcrição validada visualmente — transcrição validada visualmente",
     "sourceKind": "PDF",
     "available": true,
-    "note": "Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte.",
+    "note": "Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte.",
     "manualValidated": true,
     "qualityBlocked": false
   },
