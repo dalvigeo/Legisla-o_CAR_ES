@@ -269,10 +269,10 @@ window.NORM_SOURCES = {
   "in-idaf-005-2020": {
     "officialUrl": "https://idaf.es.gov.br/Media/idaf/Documentos/Legislação/GELCOF/Instrução%20Normativa%20005,%20de%2009%20mar%202020%20-%20Reserva%20Legal-1.pdf",
     "textSourceUrl": "https://idaf.es.gov.br/Media/idaf/Documentos/Legisla%C3%A7%C3%A3o/GELCOF/Instru%C3%A7%C3%A3o%20Normativa%20005,%20de%2009%20mar%202020%20-%20Reserva%20Legal-1.pdf",
-    "textSourceLabel": "Idaf — Política e Proteção Florestal — transcrição validada visualmente — transcrição validada visualmente — transcrição validada visualmente — transcrição validada visualmente — transcrição validada visualmente",
+    "textSourceLabel": "Idaf — Política e Proteção Florestal — transcrição validada visualmente — transcrição validada visualmente — transcrição validada visualmente — transcrição validada visualmente — transcrição validada visualmente — transcrição validada visualmente",
     "sourceKind": "PDF",
     "available": true,
-    "note": "Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte.",
+    "note": "Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte.",
     "manualValidated": true,
     "qualityBlocked": false
   },
@@ -500,9 +500,9 @@ window.NORM_SOURCES = {
     "textSourceUrl": "https://www.in.gov.br/en/web/dou/-/instrucao-normativa-icmbio-n-16-de-13-de-marco-de-2026-693132826",
     "textSourceLabel": "Diário Oficial da União — fonte oficial",
     "sourceKind": "HTML",
-    "available": false,
-    "qualityBlocked": true,
-    "note": "Ato alterador da IN ICMBio nº 24/2025. A publicação oficial no DOU permanece indicada. Extração bloqueada: padrão de tokens corrompidos na extração textual."
+    "available": true,
+    "qualityBlocked": false,
+    "note": "Ato alterador da IN ICMBio nº 24/2025. A publicação oficial no DOU permanece indicada."
   },
   "in-icmbio-24-2025": {
     "officialUrl": "https://www.in.gov.br/en/web/dou/-/instrucao-normativa-icmbio-n-24-de-12-de-agosto-de-2025-648311919",
