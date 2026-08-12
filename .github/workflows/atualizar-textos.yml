@@ -12,6 +12,7 @@ on:
       - 'manual_texts/**'
       - 'scripts/build_legislation.py'
       - 'scripts/enrich_generated.py'
+      - 'scripts/fast_federal_sources.py'
       - 'scripts/process_secondary_sources.py'
       - 'scripts/apply_manual_texts.py'
       - 'scripts/quality_audit.py'
@@ -47,12 +48,13 @@ jobs:
         if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' }}
         run: python scripts/build_legislation.py
 
-      - name: Reutilizar textos-base em atualização incremental
-        if: ${{ github.event_name == 'push' }}
-        run: echo "Atualização incremental - usando textos-base já existentes."
-
-      - name: Consolidar e completar fontes
+      - name: Consolidar atualização completa
+        if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' }}
         run: python scripts/enrich_generated.py
+
+      - name: Atualizar fontes federais em paralelo
+        if: ${{ github.event_name == 'push' }}
+        run: python scripts/fast_federal_sources.py
 
       - name: Processar fontes textuais alternativas
         run: python scripts/process_secondary_sources.py
