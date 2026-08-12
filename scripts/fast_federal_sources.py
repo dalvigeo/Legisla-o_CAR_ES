@@ -40,14 +40,20 @@ def save_js(path: Path, prefix: str, value):
 
 
 def process_camara(norma, cfg):
-    actual_url, label = enrich.resolve_camara(cfg['text_source_url'], norma['id'])
+    # Alguns metadados vieram com barra final; urljoin trataria o .html como diretório.
+    meta_url = cfg['text_source_url'].rstrip('/')
+    actual_url, label = enrich.resolve_camara(meta_url, norma['id'])
     text, final_url, kind = enrich.extract_standard(actual_url)
     return norma, cfg, text, final_url, label, kind
 
 
+def process_direct_url(norma, cfg, url, label=None):
+    text, final_url, kind = enrich.extract_standard(url)
+    return norma, cfg, text, final_url, label or cfg.get('text_source_label', norma.get('fonte', 'Fonte')), kind
+
+
 def process_direct(norma, cfg):
-    text, final_url, kind = enrich.extract_standard(cfg['text_source_url'])
-    return norma, cfg, text, final_url, cfg.get('text_source_label', norma.get('fonte', 'Fonte')), kind
+    return process_direct_url(norma, cfg, cfg['text_source_url'])
 
 
 def write_text(norma, cfg, text, final_url, label, kind, sources):
@@ -56,7 +62,7 @@ def write_text(norma, cfg, text, final_url, label, kind, sources):
     previous = sources.get(norma['id'], {})
     sources[norma['id']] = {
         **previous,
-        'officialUrl': previous.get('officialUrl') or norma.get('fonteUrl', ''),
+        'officialUrl': norma.get('fonteUrl', '') or previous.get('officialUrl', ''),
         'textSourceUrl': final_url,
         'textSourceLabel': label,
         'sourceKind': kind,
@@ -83,7 +89,6 @@ def main():
         url = cfg.get('text_source_url', '')
         if not norma or norma.get('esfera') != 'Federal' or not url:
             continue
-        # ICMBio é processado em uma segunda etapa para permitir consolidação da IN 24/2025.
         if nid.startswith('in-icmbio-'):
             continue
         fn = process_camara if 'www2.camara.leg.br/legin/' in url else process_direct
@@ -101,21 +106,37 @@ def main():
                 cfg = cfgs.get(nid, {})
                 errors.append({'id': nid, 'error': 'fonte federal: ' + str(exc), 'source': cfg.get('text_source_url', '')})
 
-    # ICMBio: processa as três versões e consolida a vigente 24/2025 com a IN 16/2026.
+    # ICMBio: prioriza fontes oficiais atuais; usa reproduções apenas como fallback.
+    historic_in5 = 'https://www.gov.br/icmbio/pt-br/assuntos/consolidacao-territorial/IN__5_DE_19_DE_MAIO_DE_2016.pdf'
     icmbio_raw = {}
     for nid in ['in-icmbio-5-2016', 'in-icmbio-24-2025', 'in-icmbio-16-2026']:
         norma = by_id.get(nid)
         cfg = cfgs.get(nid, {})
-        if not norma or not cfg.get('text_source_url'):
+        if not norma:
             continue
-        try:
-            result = process_direct(norma, cfg)
-            norma, cfg, text, final_url, label, kind = result
-            icmbio_raw[nid] = (text, final_url, label, kind)
-            write_text(norma, cfg, text, final_url, label, kind, sources)
-            success.add(nid)
-        except Exception as exc:
-            errors.append({'id': nid, 'error': 'ICMBio: ' + str(exc), 'source': cfg.get('text_source_url', '')})
+
+        candidates = []
+        if nid == 'in-icmbio-5-2016':
+            candidates.append((historic_in5, 'ICMBio — arquivo oficial histórico'))
+        elif norma.get('fonteUrl'):
+            candidates.append((norma['fonteUrl'], 'Diário Oficial da União — fonte oficial'))
+        if cfg.get('text_source_url'):
+            candidates.append((cfg['text_source_url'], cfg.get('text_source_label', norma.get('fonte', 'Fonte'))))
+
+        last_error = None
+        for url, label in candidates:
+            try:
+                result = process_direct_url(norma, cfg, url, label)
+                norma2, cfg2, text, final_url, label2, kind = result
+                icmbio_raw[nid] = (text, final_url, label2, kind)
+                write_text(norma2, cfg2, text, final_url, label2, kind, sources)
+                success.add(nid)
+                last_error = None
+                break
+            except Exception as exc:
+                last_error = exc
+        if last_error is not None:
+            errors.append({'id': nid, 'error': 'ICMBio: ' + str(last_error), 'source': candidates[-1][0] if candidates else ''})
 
     if 'in-icmbio-24-2025' in icmbio_raw and 'in-icmbio-16-2026' in icmbio_raw:
         base_text, base_url, _, base_kind = icmbio_raw['in-icmbio-24-2025']
@@ -123,7 +144,7 @@ def main():
         norma = by_id['in-icmbio-24-2025']
         consolidated = enrich.consolidate_in24(base_text, amendment_text)
         label = 'IN ICMBio nº 24/2025 — texto consolidado editorialmente com a IN nº 16/2026'
-        cfg = dict(cfgs['in-icmbio-24-2025'])
+        cfg = dict(cfgs.get('in-icmbio-24-2025', {}))
         cfg['note'] = 'Consolidação editorial com as alterações da IN ICMBio nº 16/2026; as publicações oficiais permanecem identificadas.'
         write_text(norma, cfg, consolidated, base_url, label, base_kind, sources)
 
