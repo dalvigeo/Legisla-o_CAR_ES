@@ -15,12 +15,18 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: atualizar-textos-main
+  cancel-in-progress: true
+
 jobs:
   atualizar:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Python
         uses: actions/setup-python@v5
@@ -42,5 +48,6 @@ jobs:
             echo "Nenhuma alteração nos textos."
           else
             git commit -m "Atualiza textos normativos a partir das fontes"
-            git push
+            git pull --rebase origin main
+            git push origin main
           fi
