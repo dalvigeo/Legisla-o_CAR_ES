@@ -15,6 +15,7 @@
     "decreto-es-3623-r-2014",
     "decreto-es-3948-r-2016",
     "decreto-es-4041-r-2016",
+    "decreto-es-4124-n-1997",
     "decreto-es-4139-r-2017",
     "decreto-es-4165-r-2017",
     "decreto-es-5736-r-2024",
@@ -476,11 +477,10 @@
     }
   ],
   "quality_blocked": [
-    "decreto-es-4124-n-1997",
     "in-idaf-008-2014-barragens",
     "in-idaf-009-2014-barragens"
   ],
   "total_normas": 59,
-  "total_com_texto": 56,
-  "total_pendentes": 3
+  "total_com_texto": 57,
+  "total_pendentes": 2
 }

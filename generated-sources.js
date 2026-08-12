@@ -269,10 +269,10 @@ window.NORM_SOURCES = {
   "in-idaf-005-2020": {
     "officialUrl": "https://idaf.es.gov.br/Media/idaf/Documentos/Legislação/GELCOF/Instrução%20Normativa%20005,%20de%2009%20mar%202020%20-%20Reserva%20Legal-1.pdf",
     "textSourceUrl": "https://idaf.es.gov.br/Media/idaf/Documentos/Legisla%C3%A7%C3%A3o/GELCOF/Instru%C3%A7%C3%A3o%20Normativa%20005,%20de%2009%20mar%202020%20-%20Reserva%20Legal-1.pdf",
-    "textSourceLabel": "Idaf — Política e Proteção Florestal — transcrição validada visualmente — transcrição validada visualmente — transcrição validada visualmente — transcrição validada visualmente — transcrição validada visualmente — transcrição validada visualmente — transcrição validada visualmente",
+    "textSourceLabel": "Idaf — Política e Proteção Florestal — transcrição validada visualmente — transcrição validada visualmente — transcrição validada visualmente — transcrição validada visualmente — transcrição validada visualmente — transcrição validada visualmente — transcrição validada visualmente — transcrição validada visualmente",
     "sourceKind": "PDF",
     "available": true,
-    "note": "Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte.",
+    "note": "Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte.",
     "manualValidated": true,
     "qualityBlocked": false
   },
@@ -288,10 +288,10 @@ window.NORM_SOURCES = {
   "in-idaf-003-2022": {
     "officialUrl": "https://idaf.es.gov.br/Media/idaf/Documentos/Legislação/GELCOF/IN%20IDAF%20003-22%20-%20Institui%20Vistoria%20Remota%20para%20CAR%20e%20Licenciamento.pdf",
     "textSourceUrl": "https://idaf.es.gov.br/Media/idaf/Documentos/Legisla%C3%A7%C3%A3o/GELCOF/IN%20IDAF%20003-22%20-%20Institui%20Vistoria%20Remota%20para%20CAR%20e%20Licenciamento.pdf",
-    "textSourceLabel": "Idaf — CAR, PRA e Reserva Legal — transcrição validada visualmente",
+    "textSourceLabel": "Idaf — CAR, PRA e Reserva Legal — transcrição validada visualmente — transcrição validada visualmente",
     "sourceKind": "PDF",
     "available": true,
-    "note": "Extração bloqueada: artigos duplicados indicam mistura de colunas ou de atos distintos (art-1). Texto transcrito e conferido visualmente a partir da publicação-fonte.",
+    "note": "Extração bloqueada: artigos duplicados indicam mistura de colunas ou de atos distintos (art-1). Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte.",
     "qualityBlocked": false,
     "manualValidated": true
   },
@@ -330,12 +330,12 @@ window.NORM_SOURCES = {
   },
   "decreto-es-4124-n-1997": {
     "officialUrl": "https://idaf.es.gov.br/Media/idaf/Documentos/Legislação/GELCOF/Decreto%20estadual%20nº%204124-N,%20de%2012%20de%20junho%20de%201997.pdf",
-    "textSourceUrl": "https://idaf.es.gov.br/Media/idaf/Documentos/Legisla%C3%A7%C3%A3o/GELCOF/Decreto%20estadual%20n%C2%BA%204124-N,%20de%2012%20de%20junho%20de%201997.pdf",
-    "textSourceLabel": "Idaf — Política e Proteção Florestal",
+    "textSourceUrl": "https://idaf.es.gov.br/Media/idaf/Documentos/Legisla%C3%A7%C3%A3o/GELCOF/Decreto%20estadual%20n%C2%BA%204124-N%2C%20de%2012%20de%20junho%20de%201997.pdf",
+    "textSourceLabel": "Idaf — PDF oficial do Decreto Estadual nº 4.124-N/1997",
     "sourceKind": "PDF",
-    "available": false,
-    "note": "Extração bloqueada: artigos duplicados indicam mistura de colunas ou de atos distintos (art-1, art-2, art-3, art-64).",
-    "qualityBlocked": true
+    "available": true,
+    "note": "O Decreto publica, após seus arts. 1º a 3º, o Regulamento da Política Florestal, cuja numeração de artigos reinicia no art. 1º. Essa repetição é estrutural e não indica duplicação do documento.",
+    "qualityBlocked": false
   },
   "lei-es-7058-2002": {
     "officialUrl": "https://idaf.es.gov.br/Media/idaf/Documentos/Legislação/GELCOF/Lei%20Estadual%207.058_2002.pdf",
