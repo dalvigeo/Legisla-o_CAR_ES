@@ -106,9 +106,12 @@ window.NORM_SOURCES = {
   },
   "lei-9985-2000": {
     "officialUrl": "https://www.planalto.gov.br/ccivil_03/leis/l9985.htm",
-    "textSourceUrl": "https://www.planalto.gov.br/ccivil_03/leis/l9985.htm",
-    "textSourceLabel": "Planalto",
-    "available": false
+    "textSourceUrl": "https://www2.camara.leg.br/legin/fed/lei/2000/lei-9985-18-julho-2000-359708-normaatualizada-pl.html",
+    "textSourceLabel": "Câmara dos Deputados — Texto Atualizado (HTML)",
+    "available": true,
+    "sourceKind": "HTML",
+    "qualityBlocked": false,
+    "note": ""
   },
   "decreto-4340-2002": {
     "officialUrl": "https://www.planalto.gov.br/ccivil_03/decreto/2002/d4340.htm",
@@ -266,10 +269,10 @@ window.NORM_SOURCES = {
   "in-idaf-005-2020": {
     "officialUrl": "https://idaf.es.gov.br/Media/idaf/Documentos/Legislação/GELCOF/Instrução%20Normativa%20005,%20de%2009%20mar%202020%20-%20Reserva%20Legal-1.pdf",
     "textSourceUrl": "https://idaf.es.gov.br/Media/idaf/Documentos/Legisla%C3%A7%C3%A3o/GELCOF/Instru%C3%A7%C3%A3o%20Normativa%20005,%20de%2009%20mar%202020%20-%20Reserva%20Legal-1.pdf",
-    "textSourceLabel": "Idaf — Política e Proteção Florestal — transcrição validada visualmente — transcrição validada visualmente — transcrição validada visualmente",
+    "textSourceLabel": "Idaf — Política e Proteção Florestal — transcrição validada visualmente — transcrição validada visualmente — transcrição validada visualmente — transcrição validada visualmente",
     "sourceKind": "PDF",
     "available": true,
-    "note": "Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte.",
+    "note": "Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte. Texto transcrito e conferido visualmente a partir da publicação-fonte.",
     "manualValidated": true,
     "qualityBlocked": false
   },
@@ -317,12 +320,12 @@ window.NORM_SOURCES = {
   },
   "lei-es-5361-1996": {
     "officialUrl": "https://idaf.es.gov.br/Media/idaf/Documentos/Legislação/GELCOF/Lei%20estadual%205.361-96%20-%20Política%20florestal%20do%20Estado.pdf",
-    "textSourceUrl": "https://idaf.es.gov.br/Media/idaf/Documentos/Legisla%C3%A7%C3%A3o/GELCOF/Lei%20estadual%205.361-96%20-%20Pol%C3%ADtica%20florestal%20do%20Estado.pdf",
-    "textSourceLabel": "Idaf — Política e Proteção Florestal",
-    "sourceKind": "PDF",
-    "available": false,
-    "note": "Extração bloqueada: artigos duplicados indicam mistura de colunas ou de atos distintos (art-16, art-45, art-36, art-43).",
-    "qualityBlocked": true
+    "textSourceUrl": "https://www.legisweb.com.br/legislacao/?id=125907",
+    "textSourceLabel": "LegisWeb — texto da Lei Estadual nº 5.361/1996",
+    "sourceKind": "HTML",
+    "available": true,
+    "note": "Fonte textual estruturada usada para leitura, com indicações de redações posteriores. O PDF disponibilizado pelo Idaf permanece como fonte oficial paralela.",
+    "qualityBlocked": false
   },
   "decreto-es-4124-n-1997": {
     "officialUrl": "https://idaf.es.gov.br/Media/idaf/Documentos/Legislação/GELCOF/Decreto%20estadual%20nº%204124-N,%20de%2012%20de%20junho%20de%201997.pdf",
@@ -335,12 +338,12 @@ window.NORM_SOURCES = {
   },
   "lei-es-7058-2002": {
     "officialUrl": "https://idaf.es.gov.br/Media/idaf/Documentos/Legislação/GELCOF/Lei%20Estadual%207.058_2002.pdf",
-    "textSourceUrl": "https://idaf.es.gov.br/Media/idaf/Documentos/Legisla%C3%A7%C3%A3o/GELCOF/Lei%20Estadual%207.058_2002.pdf",
-    "textSourceLabel": "Idaf — Política e Proteção Florestal",
-    "sourceKind": "PDF",
-    "available": false,
-    "note": "Extração bloqueada: artigos duplicados indicam mistura de colunas ou de atos distintos (art-1, art-2, art-6, art-8).",
-    "qualityBlocked": true
+    "textSourceUrl": "https://www.normasbrasil.com.br/norma/lei-7058-2002-es_125482.html",
+    "textSourceLabel": "Normas Brasil — texto da Lei Estadual nº 7.058/2002",
+    "sourceKind": "HTML",
+    "available": true,
+    "note": "Fonte textual estruturada usada para leitura; o PDF disponibilizado pelo Idaf permanece como fonte oficial paralela.",
+    "qualityBlocked": false
   },
   "decreto-es-5736-r-2024": {
     "officialUrl": "https://idaf.es.gov.br/Media/idaf/Documentos/Legislação/GELCOF/DEC-5736-2024-Espirito%20Santo-ES.pdf",

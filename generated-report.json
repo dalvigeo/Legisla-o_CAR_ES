@@ -42,7 +42,10 @@
     "lei-6015-1973",
     "lei-7803-1989",
     "lei-9605-1998",
+    "lei-9985-2000",
     "lei-es-4701-1992",
+    "lei-es-5361-1996",
+    "lei-es-7058-2002",
     "mp-2166-67-2001",
     "np-idaf-101-cancelamento-car",
     "np-idaf-122-pra",
@@ -365,12 +368,9 @@
     "in-idaf-002-2023-barragens",
     "in-idaf-003-2022",
     "in-idaf-008-2014-barragens",
-    "in-idaf-009-2014-barragens",
-    "lei-9985-2000",
-    "lei-es-5361-1996",
-    "lei-es-7058-2002"
+    "in-idaf-009-2014-barragens"
   ],
   "total_normas": 59,
-  "total_com_texto": 50,
-  "total_pendentes": 9
+  "total_com_texto": 53,
+  "total_pendentes": 6
 }
