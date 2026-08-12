@@ -16,6 +16,7 @@ on:
       - 'scripts/process_secondary_sources.py'
       - 'scripts/apply_manual_texts.py'
       - 'scripts/quality_audit.py'
+      - 'scripts/final_guard.py'
       - '.github/workflows/atualizar-textos.yml'
   schedule:
     - cron: '20 9 1 * *'
@@ -64,6 +65,9 @@ jobs:
 
       - name: Auditar qualidade textual
         run: python scripts/quality_audit.py
+
+      - name: Aplicar guarda final de integridade
+        run: python scripts/final_guard.py
 
       - name: Publicar conteúdo gerado no repositório
         run: |
