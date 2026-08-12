@@ -43,8 +43,13 @@ jobs:
       - name: Dependências
         run: pip install requests beautifulsoup4 lxml pymupdf
 
-      - name: Gerar textos-base
+      - name: Gerar textos-base em atualização completa
+        if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' }}
         run: python scripts/build_legislation.py
+
+      - name: Reutilizar textos-base em atualização incremental
+        if: ${{ github.event_name == 'push' }}
+        run: echo "Atualização incremental - usando textos-base já existentes."
 
       - name: Consolidar e completar fontes
         run: python scripts/enrich_generated.py
