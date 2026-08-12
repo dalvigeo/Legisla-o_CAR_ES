@@ -85,12 +85,14 @@ def is_trusted_structured_html(source: dict) -> bool:
         'legisweb.com.br',
         'normasbrasil.com.br',
         'revistaprocampo.com.br',
+        'taxesbrasil.com.br',
+        'ribmg.org.br',
         'lex.com.br',
         'irib.org.br',
         'gov.br/',
         'in.gov.br',
     ]
-    trusted_labels = ['texto atualizado', 'texto consolidado', 'legislação informatizada']
+    trusted_labels = ['texto atualizado', 'texto consolidado', 'legislação informatizada', 'reprodução integral']
     return any(domain in url for domain in trusted_domains) or any(term in label for term in trusted_labels)
 
 
@@ -104,6 +106,8 @@ def markup_reason(soup: BeautifulSoup) -> str | None:
     contamination = [
         'resumo do contrato',
         'ordem de servico',
+        'ordem de fornecimento',
+        'valor total',
         'conceder recesso aos estagiario',
         'grupo de recursos humanos',
         'extrato do edital de notificacao',
@@ -111,20 +115,23 @@ def markup_reason(soup: BeautifulSoup) -> str | None:
         'concessao de uso seag',
     ]
     hits = [marker for marker in contamination if marker in text]
-    strong = {'ordem de servico', 'conceder recesso aos estagiario', 'extrato do edital de notificacao'}
+    strong = {
+        'ordem de servico', 'ordem de fornecimento', 'conceder recesso aos estagiario',
+        'extrato do edital de notificacao'
+    }
     if len(hits) >= 2 or any(hit in strong for hit in hits):
         return 'conteúdo de outro ato administrativo misturado à norma durante a leitura do Diário Oficial'
     return None
 
 
-def quality_reason(text: str, norma: dict, strict_structure: bool = True) -> str | None:
+def quality_reason(text: str, norma: dict, strict_structure: bool = True, strict_tokens: bool = True) -> str | None:
     plain = re.sub(r'\s+', ' ', text).strip()
     n = normalize(plain)
     if len(plain) < 160:
         return 'texto excessivamente curto'
     if suspicious_ratio(plain) > .012:
         return 'alta proporção de glifos inválidos na camada textual do documento'
-    if garbage_tokens(plain) > .035:
+    if strict_tokens and garbage_tokens(plain) > .035:
         return 'padrão de tokens corrompidos na extração textual'
 
     if strict_structure:
@@ -170,14 +177,13 @@ def main():
         source = sources.get(nid, {})
         trusted_html = is_trusted_structured_html(source)
 
-        # Artigos repetidos são comuns em textos compilados que preservam notas/redações
-        # anteriores. Esse sinal é usado apenas em PDFs/DOU e fontes não estruturadas.
         reason = None if trusted_html else markup_reason(soup)
         if not reason:
             reason = quality_reason(
                 soup.get_text(' ', strip=True),
                 norma,
                 strict_structure=not trusted_html,
+                strict_tokens=not trusted_html,
             )
         if not reason:
             continue
