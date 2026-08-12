@@ -6,8 +6,10 @@ on:
     branches: [main]
     paths:
       - 'data.js'
+      - 'data-current.js'
       - 'source_overrides.json'
       - 'scripts/build_legislation.py'
+      - 'scripts/enrich_generated.py'
       - '.github/workflows/atualizar-textos.yml'
   schedule:
     - cron: '20 9 1 * *'
@@ -36,8 +38,11 @@ jobs:
       - name: Dependências
         run: pip install requests beautifulsoup4 lxml pymupdf
 
-      - name: Gerar textos e índice de busca
+      - name: Gerar textos-base
         run: python scripts/build_legislation.py
+
+      - name: Consolidar, validar e completar fontes
+        run: python scripts/enrich_generated.py
 
       - name: Publicar conteúdo gerado no repositório
         run: |
