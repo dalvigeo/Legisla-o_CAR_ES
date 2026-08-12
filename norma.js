@@ -79,7 +79,7 @@ if (!norma) {
       <div class="tags">${tags}</div>
       <div class="norma-actions" style="margin-top:20px">
         <a class="source-link primary" href="${norma.fonteUrl}" target="_blank" rel="noopener">Acessar fonte oficial ↗</a>
-        <a class="source-link" href="index.html?q=${encodeURIComponent((norma.temas || [])[0] || norma.numero)}">Pesquisar normas relacionadas</a>
+        <a class="source-link" href="busca.html?q=${encodeURIComponent((norma.temas || [])[0] || norma.numero)}">Pesquisar normas relacionadas</a>
       </div>
     </article>
 
