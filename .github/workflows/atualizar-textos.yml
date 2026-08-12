@@ -8,8 +8,11 @@ on:
       - 'data.js'
       - 'data-current.js'
       - 'source_overrides.json'
+      - 'manual_texts/**'
       - 'scripts/build_legislation.py'
       - 'scripts/enrich_generated.py'
+      - 'scripts/apply_manual_texts.py'
+      - 'scripts/quality_audit.py'
       - '.github/workflows/atualizar-textos.yml'
   schedule:
     - cron: '20 9 1 * *'
@@ -41,8 +44,14 @@ jobs:
       - name: Gerar textos-base
         run: python scripts/build_legislation.py
 
-      - name: Consolidar, validar e completar fontes
+      - name: Consolidar e completar fontes
         run: python scripts/enrich_generated.py
+
+      - name: Aplicar transcrições validadas
+        run: python scripts/apply_manual_texts.py
+
+      - name: Auditar qualidade textual
+        run: python scripts/quality_audit.py
 
       - name: Publicar conteúdo gerado no repositório
         run: |
