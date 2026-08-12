@@ -14,7 +14,10 @@
         <a class="brand" href="index.html">Legislação CAR/ES</a>
         <p class="brand-subtitle">Catálogo de normas aplicadas ao Cadastro Ambiental Rural no Espírito Santo</p>
       </div>
-      <a class="source-link compact" href="https://github.com/dalvigeo/Legisla-o_CAR_ES" target="_blank" rel="noopener">GitHub</a>
+      <nav class="norma-actions">
+        <a class="source-link compact" href="busca.html">Pesquisar</a>
+        <a class="source-link compact" href="https://github.com/dalvigeo/Legisla-o_CAR_ES" target="_blank" rel="noopener">GitHub</a>
+      </nav>
     </div>
   </header>
 
@@ -24,39 +27,18 @@
         <span class="eyebrow">DESCOMPLICAR · BASE DE CONSULTA</span>
         <h1>Legislação aplicada ao CAR no Espírito Santo</h1>
         <p>Catálogo organizado de leis, decretos, instruções normativas e normas de procedimento relacionadas ao CAR, APP, Reserva Legal, PRA, Mata Atlântica, barragens e temas correlatos.</p>
-        <div class="search-panel">
-          <label for="searchInput">Pesquisar por norma, número, órgão, tema ou palavra-chave</label>
-          <div class="search-row">
-            <input id="searchInput" type="search" placeholder="Ex.: reserva legal, barragem, art. 68, 12.651, PRA..." autocomplete="off">
-            <button id="clearSearch" class="secondary-button" type="button">Limpar</button>
-          </div>
-          <div class="filters" aria-label="Filtros de pesquisa">
-            <select id="sphereFilter">
-              <option value="">Todas as esferas</option>
-              <option value="Federal">Federal</option>
-              <option value="Estadual">Estadual</option>
-            </select>
-            <select id="statusFilter">
-              <option value="">Todas as situações</option>
-              <option value="Vigente">Vigente</option>
-              <option value="Alteradora">Norma alteradora</option>
-              <option value="Histórica / revogada">Histórica / revogada</option>
-            </select>
-            <select id="themeFilter">
-              <option value="">Todos os temas</option>
-            </select>
-          </div>
+        <div class="norma-actions" style="margin-top:24px">
+          <a class="source-link primary" href="busca.html">Pesquisar nas normas →</a>
+          <span class="source-link" style="cursor:default">Fontes oficiais priorizadas</span>
         </div>
         <div class="catalog-meta">
           <span id="resultCount"></span>
-          <span>Fontes oficiais priorizadas · conferência inicial: 11/08/2026</span>
+          <span>Conferência inicial do catálogo: 11/08/2026</span>
         </div>
       </div>
     </section>
 
     <section class="container catalog-section">
-      <div id="emptyState" class="empty-state" hidden>Nenhuma norma encontrada para os filtros informados.</div>
-
       <section id="federalSection" class="sphere-section">
         <div class="section-heading">
           <div>
