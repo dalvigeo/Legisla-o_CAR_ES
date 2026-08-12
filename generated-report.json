@@ -1,10 +1,11 @@
 {
-  "generated_at": "2026-08-12T02:48:28.360868+00:00",
+  "generated_at": "2026-08-12T02:58:34.919466+00:00",
   "success": [
     "in-mma-2-2014",
     "in-mma-3-2014",
     "res-conama-29-1994",
     "res-conama-302-2002",
+    "decreto-es-3346-r-2013",
     "in-idaf-005-2013",
     "in-idaf-005-2015",
     "in-idaf-005-2020",
@@ -21,6 +22,8 @@
     "np-idaf-101-cancelamento-car",
     "np-idaf-122-pra",
     "decreto-es-3948-r-2016",
+    "decreto-es-4139-r-2017",
+    "decreto-es-4165-r-2017",
     "in-idaf-020-2017",
     "in-idaf-021-2017",
     "in-idaf-001-2023-barragens",
@@ -96,8 +99,8 @@
     },
     {
       "id": "in-icmbio-5-2016",
-      "error": "texto extraído muito curto",
-      "source": "https://idaf.es.gov.br/Media/idaf/Documentos/Legislação/GELCOF/IN%20Icmbio%20nº%20005,%20de%2019%20de%20maio%20de%202016.pdf"
+      "error": "HTTPSConnectionPool(host='williamfreire.com.br', port=443): Max retries exceeded with url: /nao-categorizado/instrucao-normativa-no-5-de-19-de-maio-de-2016/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)')))",
+      "source": "https://williamfreire.com.br/nao-categorizado/instrucao-normativa-no-5-de-19-de-maio-de-2016/"
     },
     {
       "id": "lei-6015-1973",
@@ -148,26 +151,6 @@
       "id": "mp-2166-67-2001",
       "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
       "source": "https://www.planalto.gov.br/ccivil_03/mpv/2166-67.htm"
-    },
-    {
-      "id": "decreto-es-3346-r-2013",
-      "error": "403 Client Error: Forbidden for url: https://leisestaduais.com.br/es/decreto-n-3346-2013-espirito-santo-altera-os-decretos-n-3346-r-de-11-07-2013-e-n-3-623-r-de-04-08-2014",
-      "source": "https://leisestaduais.com.br/es/decreto-n-3346-2013-espirito-santo-altera-os-decretos-n-3346-r-de-11-07-2013-e-n-3-623-r-de-04-08-2014"
-    },
-    {
-      "id": "decreto-es-4139-r-2017",
-      "error": "403 Client Error: Forbidden for url: https://leisestaduais.com.br/es/decreto-n-4139-2017-espirito-santo-regulamenta-o-licenciamento-ambiental-de-barragens-para-fins-agropecuarios-e-ou-usos-multiplos-no-estado",
-      "source": "https://leisestaduais.com.br/es/decreto-n-4139-2017-espirito-santo-regulamenta-o-licenciamento-ambiental-de-barragens-para-fins-agropecuarios-e-ou-usos-multiplos-no-estado"
-    },
-    {
-      "id": "decreto-es-4165-r-2017",
-      "error": "403 Client Error: Forbidden for url: https://leisestaduais.com.br/es/decreto-n-4165-2017-espirito-santo-altera-o-decreto-n-4139-r-de-10-08-2017-que-regulamentou-o-licenciamento-ambiental-de-barragens-para-fins-agropecuarios-e-ou-usos-multiplos",
-      "source": "https://leisestaduais.com.br/es/decreto-n-4165-2017-espirito-santo-altera-o-decreto-n-4139-r-de-10-08-2017-que-regulamentou-o-licenciamento-ambiental-de-barragens-para-fins-agropecuarios-e-ou-usos-multiplos"
-    },
-    {
-      "id": "in-idaf-020-2017",
-      "error": "não foi possível localizar o art. 32 na norma alteradora",
-      "source": "https://idaf.es.gov.br/Media/idaf/Documentos/Legisla%C3%A7%C3%A3o/CLAM/Barragens/Instru%C3%A7%C3%A3o%20Normativa%20n%C2%BA%20%20001-2023.pdf"
     }
   ]
 }

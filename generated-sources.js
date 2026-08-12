@@ -167,13 +167,15 @@ window.NORM_SOURCES = {
     "textSourceLabel": "LegisWeb — reprodução do ato histórico",
     "sourceKind": "HTML",
     "available": true,
-    "note": "Norma revogada; o link oficial do CONAMA permanece disponível na ficha."
+    "note": "Norma revogada; o link oficial do CONAMA permanece disponível."
   },
   "decreto-es-3346-r-2013": {
-    "officialUrl": "https://idaf.es.gov.br/GrupodeArquivos/car-pra-e-reserva-legal",
-    "textSourceUrl": "https://idaf.es.gov.br/GrupodeArquivos/car-pra-e-reserva-legal",
+    "officialUrl": "https://idaf.es.gov.br/Media/idaf/Documentos/Legislação/GELCOF/Decreto%20Estadual%20n°%203.346-R,%20de%2011%20de%20julho%20de%202013.pdf",
+    "textSourceUrl": "https://idaf.es.gov.br/Media/idaf/Documentos/Legisla%C3%A7%C3%A3o/GELCOF/Decreto%20Estadual%20n%C2%B0%203.346-R,%20de%2011%20de%20julho%20de%202013.pdf",
     "textSourceLabel": "Idaf — CAR, PRA e Reserva Legal",
-    "available": false
+    "sourceKind": "PDF",
+    "available": true,
+    "note": "Texto-base obtido em fonte oficial. O art. 12 deve refletir a redação dada pelo Decreto Estadual nº 4.139-R/2017."
   },
   "in-idaf-005-2013": {
     "officialUrl": "https://idaf.es.gov.br/Media/idaf/Documentos/Legislação/GELCOF/IN%20Idaf%20nº%20005,%20de%2030%20de%20setembro%20de%202013.pdf",
@@ -304,16 +306,20 @@ window.NORM_SOURCES = {
     "note": ""
   },
   "decreto-es-4139-r-2017": {
-    "officialUrl": "https://idaf.es.gov.br/GrupodeArquivos/legislacao-licenciamento-ambiental-barragens",
-    "textSourceUrl": "https://idaf.es.gov.br/GrupodeArquivos/legislacao-licenciamento-ambiental-barragens",
-    "textSourceLabel": "Idaf — Licenciamento Ambiental de Barragens",
-    "available": false
+    "officialUrl": "https://idaf.es.gov.br/Media/idaf/Documentos/Legislação/CLAM/Barragens/Decreto%20Estadual%20nº%204139-R.pdf",
+    "textSourceUrl": "https://www.legisweb.com.br/legislacao/?id=347481",
+    "textSourceLabel": "LegisWeb — texto com alteração do Decreto nº 4.165-R/2017",
+    "sourceKind": "HTML",
+    "available": true,
+    "note": "A fonte de leitura incorpora o parágrafo único acrescentado ao art. 7º pelo Decreto nº 4.165-R/2017. O link oficial do Idaf permanece disponível."
   },
   "decreto-es-4165-r-2017": {
-    "officialUrl": "https://idaf.es.gov.br/GrupodeArquivos/legislacao-licenciamento-ambiental-barragens",
-    "textSourceUrl": "https://idaf.es.gov.br/GrupodeArquivos/legislacao-licenciamento-ambiental-barragens",
-    "textSourceLabel": "Idaf — Licenciamento Ambiental de Barragens",
-    "available": false
+    "officialUrl": "https://idaf.es.gov.br/Media/idaf/Documentos/Legislação/CLAM/Barragens/Decreto%20Estadual%20N%204165%20-%20R%20de%2001%20de%20novembro%20de%202017.pdf",
+    "textSourceUrl": "https://www.legisweb.com.br/legislacao/?id=352160",
+    "textSourceLabel": "LegisWeb — reprodução do ato alterador",
+    "sourceKind": "HTML",
+    "available": true,
+    "note": "Ato alterador do Decreto Estadual nº 4.139-R/2017. O link oficial do Idaf permanece disponível."
   },
   "in-idaf-020-2017": {
     "officialUrl": "https://idaf.es.gov.br/Media/idaf/Documentos/Legislação/CLAM/Barragens/Instrução%20Normativa%20nº%20%20020-2017%20comentada.pdf",
@@ -321,7 +327,7 @@ window.NORM_SOURCES = {
     "textSourceLabel": "Idaf — Legislação",
     "sourceKind": "PDF",
     "available": true,
-    "note": "O art. 32 é atualizado automaticamente a partir da IN Idaf nº 001/2023."
+    "note": "O art. 32 deve refletir a alteração promovida pela IN Idaf nº 001/2023."
   },
   "in-idaf-021-2017": {
     "officialUrl": "https://idaf.es.gov.br/Media/idaf/Documentos/Legislação/CLAM/Barragens/Instrução%20Normativa%20nº%20021-2017%20comentada.pdf",
