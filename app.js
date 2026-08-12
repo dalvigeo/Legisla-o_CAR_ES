@@ -13,8 +13,9 @@ function statusClass(status) {
 
 function cardTemplate(norma) {
   const tags = (norma.temas || []).slice(0, 5).map(t => `<span class="tag">${t}</span>`).join('');
+  const href = `norma.html?id=${encodeURIComponent(norma.id)}`;
   return `
-    <article class="card">
+    <a class="card card-clickable" href="${href}" aria-label="Acessar ${norma.titulo}">
       <div class="card-top">
         <span class="card-type">${norma.tipo}</span>
         <span class="status-badge ${statusClass(norma.status)}">${norma.status}</span>
@@ -23,10 +24,8 @@ function cardTemplate(norma) {
       <p><strong>${norma.subtitulo}</strong></p>
       <p>${norma.descricao}</p>
       <div class="tags">${tags}</div>
-      <div class="card-actions">
-        <a class="card-link" href="norma.html?id=${encodeURIComponent(norma.id)}">Consultar ficha →</a>
-      </div>
-    </article>`;
+      <div class="card-actions"><span class="card-link">Acessar texto da norma →</span></div>
+    </a>`;
 }
 
 const federais = normas.filter(n => n.esfera === 'Federal');
