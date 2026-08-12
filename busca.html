@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pesquisa no catálogo de normas aplicadas ao Cadastro Ambiental Rural no Espírito Santo.">
+  <title>Pesquisar | Legislação CAR/ES</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div>
+        <a class="brand" href="index.html">Legislação CAR/ES</a>
+        <p class="brand-subtitle">Pesquisa por norma, órgão, tema e palavra-chave</p>
+      </div>
+      <a class="source-link compact" href="index.html">← Catálogo</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow">PESQUISA LEGISLATIVA</span>
+        <h1>Pesquisar nas normas</h1>
+        <p>A pesquisa utiliza os títulos, descrições, números, órgãos, situações e temas cadastrados. Esta versão não pesquisa o texto integral dos atos normativos.</p>
+
+        <div class="search-panel">
+          <label for="searchInput">Termo de pesquisa</label>
+          <div class="search-row">
+            <input id="searchInput" type="search" placeholder="Ex.: reserva legal, barragem, 12.651, Mata Atlântica, compensação..." autocomplete="off" autofocus>
+            <button id="clearSearch" class="secondary-button" type="button">Limpar</button>
+          </div>
+          <div class="filters">
+            <select id="sphereFilter">
+              <option value="">Todas as esferas</option>
+              <option value="Federal">Federal</option>
+              <option value="Estadual">Estadual</option>
+            </select>
+            <select id="statusFilter">
+              <option value="">Todas as situações</option>
+              <option value="Vigente">Vigente</option>
+              <option value="Alteradora">Norma alteradora</option>
+              <option value="Histórica / revogada">Histórica / revogada</option>
+            </select>
+            <select id="themeFilter">
+              <option value="">Todos os temas</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="catalog-meta">
+          <span id="resultCount"></span>
+          <span>Compartilhe a URL para manter os filtros da pesquisa.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="container catalog-section">
+      <div id="emptyState" class="empty-state" hidden>Nenhuma norma encontrada para os critérios informados.</div>
+      <div id="searchResults" class="cards-grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>A pesquisa serve para localizar normas no catálogo. Consulte a ficha e acesse a fonte oficial antes de utilizar a norma.</p>
+      <p>Projeto DescompliCAR · Legislação CAR/ES.</p>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="busca.js"></script>
+</body>
+</html>
