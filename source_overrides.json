@@ -1,0 +1,39 @@
+{
+  "decreto-es-3346-r-2013": {
+    "text_source_url": "https://leisestaduais.com.br/es/decreto-n-3346-2013-espirito-santo-altera-os-decretos-n-3346-r-de-11-07-2013-e-n-3-623-r-de-04-08-2014",
+    "text_source_label": "LeisEstaduais — texto compilado",
+    "note": "Usado como fonte de consolidação; manter também o link oficial do Idaf."
+  },
+  "decreto-es-4139-r-2017": {
+    "text_source_url": "https://leisestaduais.com.br/es/decreto-n-4139-2017-espirito-santo-regulamenta-o-licenciamento-ambiental-de-barragens-para-fins-agropecuarios-e-ou-usos-multiplos-no-estado",
+    "text_source_label": "LeisEstaduais — texto compilado",
+    "note": "A consolidação incorpora a alteração do Decreto nº 4.165-R/2017; manter também o link oficial do Idaf."
+  },
+  "decreto-es-4165-r-2017": {
+    "text_source_url": "https://leisestaduais.com.br/es/decreto-n-4165-2017-espirito-santo-altera-o-decreto-n-4139-r-de-10-08-2017-que-regulamentou-o-licenciamento-ambiental-de-barragens-para-fins-agropecuarios-e-ou-usos-multiplos",
+    "text_source_label": "LeisEstaduais",
+    "note": "Ato alterador preservado integralmente; manter também o link oficial do Idaf."
+  },
+  "decreto-es-3410-r-2013": {
+    "text_source_url": "https://www.legisweb.com.br/legislacao/?id=260705",
+    "text_source_label": "LegisWeb — reprodução do ato histórico"
+  },
+  "decreto-es-3623-r-2014": {
+    "text_source_url": "https://www.legisweb.com.br/legislacao/?id=273280",
+    "text_source_label": "LegisWeb — reprodução do ato histórico"
+  },
+  "decreto-es-4041-r-2016": {
+    "text_source_url": "https://www.legisweb.com.br/legislacao/?id=332949",
+    "text_source_label": "LegisWeb — reprodução do ato histórico"
+  },
+  "res-conama-302-2002": {
+    "text_source_url": "https://www.legisweb.com.br/legislacao/?id=98315",
+    "text_source_label": "LegisWeb — reprodução do ato histórico",
+    "note": "Norma revogada; o link oficial do CONAMA permanece disponível na ficha."
+  },
+  "in-idaf-020-2017": {
+    "merge_amendment_id": "in-idaf-001-2023-barragens",
+    "merge_article": "32",
+    "note": "O art. 32 é atualizado automaticamente a partir da IN Idaf nº 001/2023."
+  }
+}
