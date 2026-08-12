@@ -110,9 +110,9 @@ function render() {
 
   const params = new URLSearchParams();
   if (searchInput.value) params.set('q', searchInput.value);
-  if (sphere) params.set('esfera', sphere);
-  if (status) params.set('situacao', status);
-  if (theme) params.set('tema', theme);
+  if (sphereFilter.value) params.set('esfera', sphereFilter.value);
+  if (statusFilter.value) params.set('situacao', statusFilter.value);
+  if (themeFilter.value) params.set('tema', themeFilter.value);
   const suffix = params.toString();
   history.replaceState(null, '', suffix ? `?${suffix}` : location.pathname);
 }
