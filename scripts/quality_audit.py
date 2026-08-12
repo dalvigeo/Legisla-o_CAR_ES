@@ -4,6 +4,7 @@ import json
 import re
 import subprocess
 import unicodedata
+from collections import Counter
 from pathlib import Path
 
 from bs4 import BeautifulSoup
@@ -55,7 +56,6 @@ def suspicious_ratio(text: str) -> float:
         meaningful += 1
         if ch.isascii() or ch in allowed_extra:
             continue
-        # Latin letters outside ASCII are acceptable; symbols/control-like glyphs are not.
         if ch.isalpha() and 'LATIN' in unicodedata.name(ch, ''):
             continue
         weird += 1
@@ -77,6 +77,30 @@ def garbage_tokens(text: str) -> float:
     return bad / max(1, len(tokens))
 
 
+def markup_reason(soup: BeautifulSoup, norma: dict) -> str | None:
+    article_ids = [tag.get('id') for tag in soup.select('[id^="art-"]') if tag.get('id')]
+    duplicates = [key for key, count in Counter(article_ids).items() if count > 1]
+    if duplicates:
+        return 'artigos duplicados indicam mistura de colunas ou de atos distintos (' + ', '.join(duplicates[:4]) + ')'
+
+    text = normalize(soup.get_text(' ', strip=True))
+    contamination = [
+        'resumo do contrato',
+        'ordem de servico',
+        'conceder recesso aos estagiario',
+        'grupo de recursos humanos',
+        'extrato do edital de notificacao',
+        'departamento de edificacoes e de rodovias',
+        'concessao de uso seag',
+    ]
+    hits = [marker for marker in contamination if marker in text]
+    # Alguns atos podem legitimamente citar contrato; exige marcador forte ou mais de um indício.
+    strong = {'ordem de servico', 'conceder recesso aos estagiario', 'extrato do edital de notificacao'}
+    if len(hits) >= 2 or any(hit in strong for hit in hits):
+        return 'conteúdo de outro ato administrativo misturado à norma durante a leitura do Diário Oficial'
+    return None
+
+
 def quality_reason(text: str, norma: dict) -> str | None:
     plain = re.sub(r'\s+', ' ', text).strip()
     n = normalize(plain)
@@ -87,7 +111,6 @@ def quality_reason(text: str, norma: dict) -> str | None:
     if garbage_tokens(plain) > .035:
         return 'padrão de tokens corrompidos na extração textual'
 
-    # Termos jurídicos esperados em atos normativos. Não exige Art. 1º para normas de procedimento.
     tipo = norma.get('tipo', '').lower()
     if any(x in tipo for x in ['lei', 'decreto', 'instrução normativa', 'resolução']):
         legal_markers = sum(marker in n for marker in ['art 1', 'resolve', 'decreta', 'fac o saber', 'presidente', 'governador', 'diretor'])
@@ -105,14 +128,12 @@ def unavailable_html(norma: dict, url: str, reason: str) -> str:
 
 def main():
     normas = load_normas()
-    by_id = {n['id']: n for n in normas}
     sources = load_js(ROOT / 'generated-sources.js', 'window.NORM_SOURCES = ', {})
     report_path = ROOT / 'generated-report.json'
     report = json.loads(report_path.read_text(encoding='utf-8')) if report_path.exists() else {'errors': []}
     errors = list(report.get('errors', []))
     bad_ids = set()
 
-    # Estes atos históricos já são deliberadamente pendentes por falta de íntegra documental.
     deliberate_pending = {'in-idaf-008-2014-barragens', 'in-idaf-009-2014-barragens'}
 
     for norma in normas:
@@ -122,15 +143,23 @@ def main():
             continue
         path = TEXT_DIR / f'{nid}.html'
         if not path.exists():
+            bad_ids.add(nid)
             continue
         soup = BeautifulSoup(path.read_text(encoding='utf-8'), 'html.parser')
         if soup.select_one('.texto-indisponivel'):
             bad_ids.add(nid)
             continue
-        text = soup.get_text(' ', strip=True)
-        reason = quality_reason(text, norma)
+
+        reason = markup_reason(soup, norma)
+        if not reason:
+            reason = quality_reason(soup.get_text(' ', strip=True), norma)
         if not reason:
             continue
+
+        # Uma transcrição visualmente validada prevalece sobre heurísticas automáticas.
+        if sources.get(nid, {}).get('manualValidated'):
+            continue
+
         bad_ids.add(nid)
         source = sources.get(nid, {})
         url = source.get('textSourceUrl') or source.get('officialUrl') or norma.get('fonteUrl', '#')
@@ -141,7 +170,6 @@ def main():
         sources[nid] = source
         errors.append({'id': nid, 'error': 'controle de qualidade: ' + reason, 'source': url})
 
-    # Refaz o índice somente com páginas aprovadas.
     index = []
     for norma in normas:
         nid = norma['id']
@@ -155,7 +183,6 @@ def main():
         if text:
             index.append({'id': nid, 'text': text[:450000]})
 
-    # Deduplica ocorrências e recalcula totais.
     dedup = []
     seen = set()
     for item in errors:
