@@ -1,0 +1,47 @@
+{
+  "decreto-es-3346-r-2013": {
+    "url": "https://www.legisweb.com.br/legislacao/?id=333041",
+    "label": "LegisWeb — texto consolidado",
+    "note": "Fonte de leitura consolidada, incluindo a redação do art. 12 dada pelo Decreto Estadual nº 4.139-R/2017. O link oficial do Idaf permanece disponível."
+  },
+  "in-idaf-005-2013": {
+    "url": "https://www.normasbrasil.com.br/norma/instrucao-normativa-5-2013-es_258934.html",
+    "label": "Normas Brasil — reprodução textual",
+    "note": "Reprodução textual usada para leitura; a fonte oficial cadastrada permanece disponível."
+  },
+  "in-idaf-005-2015": {
+    "url": "https://ptdocz.com/doc/1270467/vit%C3%B3ria--es---segunda-feira--24-de-agosto-de-2015.-instituto",
+    "label": "Reprodução da edição do Diário Oficial de 24/08/2015",
+    "note": "Fonte textual alternativa da publicação no Diário Oficial; o PDF oficial do Idaf permanece disponível."
+  },
+  "in-idaf-006-2020": {
+    "url": "https://www.revistaprocampo.com.br/2020/03/31/nova-normativa-estabelece-alteracoes-no-manejo-do-cacau-no-sistema-cabruca-no-es/",
+    "label": "Revista Procampo — reprodução integral da norma",
+    "note": "Usada porque o PDF oficial do Diário Oficial possui leitura em colunas que contamina a extração automática; a fonte oficial do Idaf permanece disponível."
+  },
+  "decreto-es-4139-r-2017": {
+    "url": "https://www.legisweb.com.br/legislacao/?id=347481",
+    "label": "LegisWeb — texto consolidado",
+    "note": "Incorpora a alteração do Decreto Estadual nº 4.165-R/2017; a fonte oficial do Idaf permanece disponível."
+  },
+  "decreto-es-4165-r-2017": {
+    "url": "https://www.legisweb.com.br/legislacao/?id=352160",
+    "label": "LegisWeb — reprodução do ato alterador"
+  },
+  "decreto-es-3410-r-2013": {
+    "url": "https://www.legisweb.com.br/legislacao/?id=260705",
+    "label": "LegisWeb — reprodução do ato histórico"
+  },
+  "decreto-es-3623-r-2014": {
+    "url": "https://www.legisweb.com.br/legislacao/?id=273280",
+    "label": "LegisWeb — reprodução do ato histórico"
+  },
+  "decreto-es-4041-r-2016": {
+    "url": "https://www.legisweb.com.br/legislacao/?id=332949",
+    "label": "LegisWeb — reprodução do ato histórico"
+  },
+  "res-conama-302-2002": {
+    "url": "https://www.legisweb.com.br/legislacao/?id=98315",
+    "label": "LegisWeb — reprodução do ato histórico"
+  }
+}
