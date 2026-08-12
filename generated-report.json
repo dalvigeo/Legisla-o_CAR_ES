@@ -1,0 +1,173 @@
+{
+  "generated_at": "2026-08-12T02:48:28.360868+00:00",
+  "success": [
+    "in-mma-2-2014",
+    "in-mma-3-2014",
+    "res-conama-29-1994",
+    "res-conama-302-2002",
+    "in-idaf-005-2013",
+    "in-idaf-005-2015",
+    "in-idaf-005-2020",
+    "in-idaf-006-2020",
+    "in-idaf-003-2022",
+    "in-idaf-011-2023",
+    "is-idaf-002-n-2026",
+    "lei-es-4701-1992",
+    "lei-es-5361-1996",
+    "decreto-es-4124-n-1997",
+    "lei-es-7058-2002",
+    "decreto-es-5736-r-2024",
+    "np-idaf-20-car",
+    "np-idaf-101-cancelamento-car",
+    "np-idaf-122-pra",
+    "decreto-es-3948-r-2016",
+    "in-idaf-020-2017",
+    "in-idaf-021-2017",
+    "in-idaf-001-2023-barragens",
+    "in-idaf-002-2023-barragens",
+    "np-idaf-13-barragens",
+    "np-idaf-22-barragens",
+    "decreto-es-3410-r-2013",
+    "decreto-es-3623-r-2014",
+    "decreto-es-4041-r-2016",
+    "in-idaf-008-2014-barragens",
+    "in-idaf-009-2014-barragens"
+  ],
+  "errors": [
+    {
+      "id": "lei-12651-2012",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "source": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12651.htm"
+    },
+    {
+      "id": "lei-12727-2012",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "source": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12727.htm"
+    },
+    {
+      "id": "decreto-7830-2012",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "source": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/decreto/d7830.htm"
+    },
+    {
+      "id": "decreto-8235-2014",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "source": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/decreto/d8235.htm"
+    },
+    {
+      "id": "lei-13887-2019",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "source": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/l13887.htm"
+    },
+    {
+      "id": "lei-14595-2023",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "source": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14595.htm"
+    },
+    {
+      "id": "lei-11428-2006",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "source": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11428.htm"
+    },
+    {
+      "id": "decreto-6660-2008",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "source": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/decreto/d6660.htm"
+    },
+    {
+      "id": "decreto-9640-2018",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "source": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/decreto/d9640.htm"
+    },
+    {
+      "id": "lei-9985-2000",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "source": "https://www.planalto.gov.br/ccivil_03/leis/l9985.htm"
+    },
+    {
+      "id": "decreto-4340-2002",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "source": "https://www.planalto.gov.br/ccivil_03/decreto/2002/d4340.htm"
+    },
+    {
+      "id": "decreto-5746-2006",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "source": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/decreto/d5746.htm"
+    },
+    {
+      "id": "in-icmbio-5-2016",
+      "error": "texto extraído muito curto",
+      "source": "https://idaf.es.gov.br/Media/idaf/Documentos/Legislação/GELCOF/IN%20Icmbio%20nº%20005,%20de%2019%20de%20maio%20de%202016.pdf"
+    },
+    {
+      "id": "lei-6015-1973",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "source": "https://www.planalto.gov.br/ccivil_03/leis/l6015consolidado.htm"
+    },
+    {
+      "id": "lei-10267-2001",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "source": "https://www.planalto.gov.br/ccivil_03/leis/leis_2001/l10267.htm"
+    },
+    {
+      "id": "decreto-4449-2002",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "source": "https://www.planalto.gov.br/ccivil_03/decreto/2002/d4449.htm"
+    },
+    {
+      "id": "lei-9605-1998",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "source": "https://www.planalto.gov.br/ccivil_03/leis/l9605.htm"
+    },
+    {
+      "id": "decreto-6514-2008",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "source": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/decreto/d6514.htm"
+    },
+    {
+      "id": "lei-12334-2010",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "source": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/lei/l12334.htm"
+    },
+    {
+      "id": "decreto-23793-1934",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "source": "https://www.planalto.gov.br/ccivil_03/decreto/1930-1949/d23793.htm"
+    },
+    {
+      "id": "lei-4771-1965",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "source": "https://www.planalto.gov.br/ccivil_03/leis/l4771.htm"
+    },
+    {
+      "id": "lei-7803-1989",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "source": "https://www.planalto.gov.br/ccivil_03/leis/l7803.htm"
+    },
+    {
+      "id": "mp-2166-67-2001",
+      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+      "source": "https://www.planalto.gov.br/ccivil_03/mpv/2166-67.htm"
+    },
+    {
+      "id": "decreto-es-3346-r-2013",
+      "error": "403 Client Error: Forbidden for url: https://leisestaduais.com.br/es/decreto-n-3346-2013-espirito-santo-altera-os-decretos-n-3346-r-de-11-07-2013-e-n-3-623-r-de-04-08-2014",
+      "source": "https://leisestaduais.com.br/es/decreto-n-3346-2013-espirito-santo-altera-os-decretos-n-3346-r-de-11-07-2013-e-n-3-623-r-de-04-08-2014"
+    },
+    {
+      "id": "decreto-es-4139-r-2017",
+      "error": "403 Client Error: Forbidden for url: https://leisestaduais.com.br/es/decreto-n-4139-2017-espirito-santo-regulamenta-o-licenciamento-ambiental-de-barragens-para-fins-agropecuarios-e-ou-usos-multiplos-no-estado",
+      "source": "https://leisestaduais.com.br/es/decreto-n-4139-2017-espirito-santo-regulamenta-o-licenciamento-ambiental-de-barragens-para-fins-agropecuarios-e-ou-usos-multiplos-no-estado"
+    },
+    {
+      "id": "decreto-es-4165-r-2017",
+      "error": "403 Client Error: Forbidden for url: https://leisestaduais.com.br/es/decreto-n-4165-2017-espirito-santo-altera-o-decreto-n-4139-r-de-10-08-2017-que-regulamentou-o-licenciamento-ambiental-de-barragens-para-fins-agropecuarios-e-ou-usos-multiplos",
+      "source": "https://leisestaduais.com.br/es/decreto-n-4165-2017-espirito-santo-altera-o-decreto-n-4139-r-de-10-08-2017-que-regulamentou-o-licenciamento-ambiental-de-barragens-para-fins-agropecuarios-e-ou-usos-multiplos"
+    },
+    {
+      "id": "in-idaf-020-2017",
+      "error": "não foi possível localizar o art. 32 na norma alteradora",
+      "source": "https://idaf.es.gov.br/Media/idaf/Documentos/Legisla%C3%A7%C3%A3o/CLAM/Barragens/Instru%C3%A7%C3%A3o%20Normativa%20n%C2%BA%20%20001-2023.pdf"
+    }
+  ]
+}
