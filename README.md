@@ -20,10 +20,12 @@ O projeto é **um catálogo**, não uma publicação oficial nem uma consolidaç
 
 ## Estrutura
 
-- `index.html` — página inicial com catálogo, busca e filtros.
-- `norma.html` — ficha individual de cada norma.
+- `index.html` — página inicial com o catálogo organizado por esfera.
+- `busca.html` — página exclusiva de pesquisa por termo, esfera, situação e tema.
+- `norma.html` — ficha individual de cada norma, acessada por identificador na URL.
 - `data.js` — base estruturada das normas cadastradas.
-- `app.js` — pesquisa e filtragem.
+- `app.js` — renderização do catálogo inicial.
+- `busca.js` — pesquisa e filtragem.
 - `norma.js` — renderização das fichas e relações temáticas.
 - `styles.css` — identidade visual e layout responsivo.
 
@@ -40,6 +42,12 @@ Quando o órgão disponibiliza texto compilado ou consolidado, ele deve ser pref
 
 **Conferência inicial do catálogo: 11/08/2026.**
 
+## Pesquisa
+
+A versão inicial pesquisa os metadados catalogados: título, subtítulo, descrição, número, órgão, situação, temas e observações. Ela ainda não indexa o texto integral das normas.
+
+Os filtros e termos pesquisados são gravados na URL, permitindo compartilhar uma pesquisa específica.
+
 ## Publicação no GitHub Pages
 
 O site não depende de build, framework ou servidor. Para publicar:
@@ -49,6 +57,8 @@ O site não depende de build, framework ou servidor. Para publicar:
 3. Em `Build and deployment`, escolha `Deploy from a branch`.
 4. Selecione a branch `main` e a pasta `/ (root)`.
 5. Salve.
+
+Depois da publicação, o endereço padrão deverá seguir o formato do GitHub Pages do usuário e do repositório.
 
 ## Manutenção
 
