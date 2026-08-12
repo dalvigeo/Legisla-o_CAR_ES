@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Catálogo de normas federais e estaduais aplicadas ao Cadastro Ambiental Rural no Espírito Santo.">
+  <title>Legislação CAR/ES</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div>
+        <a class="brand" href="index.html">Legislação CAR/ES</a>
+        <p class="brand-subtitle">Catálogo de normas aplicadas ao Cadastro Ambiental Rural no Espírito Santo</p>
+      </div>
+      <a class="source-link compact" href="https://github.com/dalvigeo/Legisla-o_CAR_ES" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow">DESCOMPLICAR · BASE DE CONSULTA</span>
+        <h1>Legislação aplicada ao CAR no Espírito Santo</h1>
+        <p>Catálogo organizado de leis, decretos, instruções normativas e normas de procedimento relacionadas ao CAR, APP, Reserva Legal, PRA, Mata Atlântica, barragens e temas correlatos.</p>
+        <div class="search-panel">
+          <label for="searchInput">Pesquisar por norma, número, órgão, tema ou palavra-chave</label>
+          <div class="search-row">
+            <input id="searchInput" type="search" placeholder="Ex.: reserva legal, barragem, art. 68, 12.651, PRA..." autocomplete="off">
+            <button id="clearSearch" class="secondary-button" type="button">Limpar</button>
+          </div>
+          <div class="filters" aria-label="Filtros de pesquisa">
+            <select id="sphereFilter">
+              <option value="">Todas as esferas</option>
+              <option value="Federal">Federal</option>
+              <option value="Estadual">Estadual</option>
+            </select>
+            <select id="statusFilter">
+              <option value="">Todas as situações</option>
+              <option value="Vigente">Vigente</option>
+              <option value="Alteradora">Norma alteradora</option>
+              <option value="Histórica / revogada">Histórica / revogada</option>
+            </select>
+            <select id="themeFilter">
+              <option value="">Todos os temas</option>
+            </select>
+          </div>
+        </div>
+        <div class="catalog-meta">
+          <span id="resultCount"></span>
+          <span>Fontes oficiais priorizadas · conferência inicial: 11/08/2026</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="container catalog-section">
+      <div id="emptyState" class="empty-state" hidden>Nenhuma norma encontrada para os filtros informados.</div>
+
+      <section id="federalSection" class="sphere-section">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">UNIÃO</span>
+            <h2>Legislação Federal</h2>
+          </div>
+          <span id="federalCount" class="count-badge"></span>
+        </div>
+        <div id="federalGrid" class="cards-grid"></div>
+      </section>
+
+      <section id="estadualSection" class="sphere-section">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">ESPÍRITO SANTO</span>
+            <h2>Legislação Estadual e atos do Idaf</h2>
+          </div>
+          <span id="estadualCount" class="count-badge"></span>
+        </div>
+        <div id="estadualGrid" class="cards-grid"></div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><strong>Legislação CAR/ES</strong> é um catálogo de consulta. A fonte oficial deve ser conferida antes do uso em atos técnicos, administrativos ou jurídicos.</p>
+      <p>Projeto DescompliCAR · Atualização inicial em 11/08/2026.</p>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
